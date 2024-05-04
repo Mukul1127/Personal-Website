@@ -1,0 +1,66 @@
+---
+/*
+  Mukul's Personal Website is a Personal Website 
+  Copyright (C) 2024 Mukul Kedia
+
+  Mukul's Personal Website is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Mukul's Personal Website is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+
+import html5 from "@/assets/html5.svg";
+import css3 from "@/assets/css3.svg"
+import js from "@/assets/js.svg";
+import python from "@/assets/python.svg";
+import java from "@/assets/java.svg";
+import csharp from "@/assets/csharp.svg";
+
+import LanguageCard from "@/components/LanguageCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+
+import laptop from "@/assets/laptop.svg?raw";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Home">
+	<main class="w-screen p-2 xl:p-8">
+		<div class="w-full xl:flex justify-around">
+			<div class="h-8 xl:hidden"></div>
+			<div class="flex flex-col items-center justify-center">
+				<div class="text-black dark:text-white w-40">
+					<Fragment set:html={ laptop } />
+				</div>
+				<h1 class="font-bold text-4xl text-black dark:text-white flex gap-2">Hi, I'm <p class="text-red-400 font-bold text-4xl">Mukul</p></h1>
+				<h2 class="text-gray-400 font-bold text-md">A Self-Taught Developer</h2>
+			</div>
+			<div class="h-8 xl:hidden"></div>
+			<div class="grid gap-2">
+				<LanguageCard image={ html5 } name="HTML" amount="Proficient" percentage={ 95 } />
+				<LanguageCard image={ css3 } name="CSS" amount="Proficient" percentage={ 95 } />
+				<LanguageCard image={ js } name="Javascript" amount="Proficient" percentage={ 95 } />
+				<LanguageCard image={ python } name="Python" amount="Proficient" percentage={ 95 } />
+				<LanguageCard image={ java } name="Java" amount="Learning" percentage={ 65 } />
+				<LanguageCard image={ csharp } name="C#" amount="Learning" percentage={ 65 } />
+			</div>
+		</div>
+		<div class="h-8"></div>
+		<div class="grid place-items-center xl:grid-flow-col gap-2 w-full">
+			<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.pages.dev" />
+			<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" />
+		</div>
+		<div class="h-8"></div>
+	</main>
+	<Footer />
+</Layout>
