@@ -27,7 +27,6 @@
     "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
     "@playform/compress": "^0.0.3",
-    "@unpic/astro": "^0.0.46",
     "astro": "^4.7.1",
     "astrojs-service-worker": "^2.0.0",
     "sharp": "^0.33.3",

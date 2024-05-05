@@ -20,18 +20,17 @@
 import Layout from "@/layouts/Layout.astro";
 import Footer from "@/components/Footer.astro";
 
-import html5 from "@/assets/html5.svg";
-import css3 from "@/assets/css3.svg"
-import js from "@/assets/js.svg";
-import python from "@/assets/python.svg";
-import java from "@/assets/java.svg";
-import csharp from "@/assets/csharp.svg";
+import html5 from "@/assets/html5.svg?raw";
+import css3 from "@/assets/css3.svg?raw"
+import js from "@/assets/js.svg?raw";
+import python from "@/assets/python.svg?raw";
+import java from "@/assets/java.svg?raw";
+import csharp from "@/assets/csharp.svg?raw";
 
 import LanguageCard from "@/components/LanguageCard.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 
 import laptop from "@/assets/laptop.svg?raw";
-import { Image } from "astro:assets";
 ---
 
 <Layout title="Home">
@@ -58,7 +57,7 @@ import { Image } from "astro:assets";
 		<div class="h-8"></div>
 		<div class="grid place-items-center xl:grid-flow-col gap-2 w-full">
 			<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.pages.dev" />
-			<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" />
+			<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
 		</div>
 		<div class="h-8"></div>
 	</main>

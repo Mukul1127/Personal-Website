@@ -18,8 +18,6 @@
 
 import { defineConfig } from "astro/config";
 
-import { imageService } from "@unpic/astro/service";
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://mksite.pages.dev/",
@@ -28,10 +26,5 @@ export default defineConfig({
     (await import("@astrojs/tailwind")).default(),
     (await import("@astrojs/sitemap")).default(),
     (await import("@playform/compress")).default()
-  ],
-  image: {
-    service: imageService({
-      placeholder: "blurhash"
-    })
-  }
+  ]
 });

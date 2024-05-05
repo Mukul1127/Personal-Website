@@ -20,17 +20,17 @@
 interface Props {
   name: string;
   description: string;
-  year?: string; 
+  year: string; 
   url?: string;
 }
 
 const { name, description, year, url } = Astro.props;
 ---
 
-<div class="min-w-80 w-min h-full p-5 rounded-lg bg-gray-700 border border-gray-100 shadow-xl dark:bg-gray-900 dark:border-gray-800">
+<div class="min-w-80 w-min h-full p-5 rounded-lg bg-gray-700 border border-gray-500 shadow-xl dark:bg-gray-900 dark:border-gray-800">
   <div class="flex justify-between items-center">
     <h5 class="text-3xl font-bold text-white">{ name }</h5>
-    { year ? <span class="ml-6 bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">{ year }</span> : <span class="ml-6 bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Future</span> }
+    <span class="ml-6 bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">{ year }</span>
   </div>
   <p class="text-gray-400 text-balance text-sm font-medium">{ description }</p>
   { url ? 
