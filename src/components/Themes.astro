@@ -1,0 +1,82 @@
+---
+const themes = [
+  "light", "dark", "cupcake", "bumblebee",
+  "emerald", "corporate", "synthwave", "retro",
+  "cyberpunk", "valentine", "halloween", "garden",
+  "forest", "aqua", "lofi", "pastel", "fantasy",
+  "wireframe", "black", "luxury", "dracula", "cmyk", 
+  "autumn", "business", "acid", "lemonade", "night", 
+  "coffee", "winter", "dim", "nord", "sunset"
+]
+
+import themeicon from "@/assets/themeicon.svg?raw"
+---
+
+<div class="dropdown dropdown-end z-50">
+  <div role="button" tabindex="0" class="btn btn-ghost flex gap-2">
+    <div class="w-5 h-5 stroke-current">
+      <Fragment set:html={themeicon} />
+    </div>
+    <p class="hidden md:block">Theme Changer</p>
+  </div>
+  <div title="Change Theme" class="dropdown-content">
+    <div tabindex="0" class="bg-base-200 rounded-box h-[28.6rem] max-h-[calc(100vh-10rem)] w-56 overflow-y-auto border border-white/5 shadow-2xl outline outline-1 outline-black/5">
+      <div class="grid grid-cols-1 gap-3 p-3">
+        {themes.map(theme => (
+          <button id={theme} data-theme={theme} class="theme-option rounded-btn flex p-3 items-center" type="button">
+              <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible h-3 w-3 shrink-0">
+                <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+              </svg>
+              <span class="flex-grow text-sm">
+                {theme}
+              </span>
+              <span class="flex h-full shrink-0 flex-wrap gap-1">
+                <span class="bg-primary rounded-badge w-2" />
+                <span class="bg-secondary rounded-badge w-2" />
+                <span class="bg-accent rounded-badge w-2" />
+                <span class="bg-neutral rounded-badge w-2" />
+              </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function setup() {
+    if (localStorage.getItem("theme") === null) {
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
+      document.getElementById(`${localStorage.getItem("theme")}-svg`).classList.remove("invisible");
+
+      if (["dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(localStorage.getItem("theme"))) {
+        document.documentElement.setAttribute("data-dark", "true");
+      } else {
+        document.documentElement.setAttribute("data-dark", "false");
+      };
+    };
+
+    const themeOptions = document.getElementsByClassName("theme-option");
+
+    for (const themeOption of themeOptions) {
+      themeOption.addEventListener("click", () => {
+        document.getElementById(`${localStorage.getItem("theme")}-svg`).classList.add("invisible");
+        document.documentElement.setAttribute("data-theme", themeOption.id);
+        localStorage.setItem("theme", themeOption.id);
+        document.getElementById(`${themeOption.id}-svg`).classList.remove("invisible");
+
+        if (["dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(themeOption.id)) {
+          document.documentElement.setAttribute("data-dark", "true");
+        } else {
+          document.documentElement.setAttribute("data-dark", "false");
+        };
+      });
+    };
+  };
+
+  document.addEventListener("astro:after-swap", setup);
+  setup();
+</script>

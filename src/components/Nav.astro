@@ -1,3 +1,4 @@
+---
 /*
   Mukul's Personal Website is a Personal Website 
   Copyright (C) 2024 Mukul Kedia
@@ -16,19 +17,11 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import type { APIRoute } from "astro";
-
-const securityTxt = `
-Contact: mailto:mukulkedia11@gmail.com
-Expires: 2034-01-01T05:00:00.000Z
-Preferred-Languages: en
-Canonical: ${new URL('.well-known/security.txt', import.meta.env.SITE).href}
-`.trim();
-
-export const GET: APIRoute = () => {
-  return new Response(securityTxt, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-    }
-  });
-};
+import Themes from "./Themes.astro"
+---
+<div class="navbar bg-base-100 justify-between md:justify-around">
+  <div class="navbar-start">
+    <a class="btn btn-ghost text-xl">Home</a>
+  </div>
+  <Themes />
+</div>

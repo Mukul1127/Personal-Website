@@ -20,17 +20,19 @@
 const { image, name, amount,  percentage } = Astro.props;
 ---
 
-<div class="w-full h-fit px-6 py-3 bg-gray-700 border border-gray-500 rounded-full shadow-xl hover:scale-105 transition-transform dark:bg-gray-900 dark:border-gray-800 grid grid-flow-col justify-between gap-10">
-  <div class="flex gap-2 items-center">
-    <div class="grid place-items-center h-8 w-8">
-      <Fragment set:html={ image } />
+<div class="w-[21rem] bg-neutral text-neutral-content rounded-full hover:scale-105 transition-transform">
+  <div class="px-6 py-3 flex justify-between">
+    <div class="flex items-center gap-2">
+      <div class="grid place-items-center h-8 w-8">
+        <Fragment set:html={ image } />
+      </div>
+      <h1 class="font-bold text-3xl">{ name }</h1>
     </div>
-    <h1 class="font-bold text-3xl text-white">{ name }</h1>
-  </div>
-  <div>
-    <p class="font-semibold text-white">{ amount }</p>
-    <div class="w-20 rounded-full h-2.5 bg-gray-500 dark:bg-gray-600">
-      <div class="bg-red-400 h-2.5 rounded-full" style={ `width: ${percentage}%` }></div>
+    <div>
+      <p class="font-semibold">{ amount }</p>
+      <div class="w-20 rounded-full h-2.5 bg-base-100">
+        <div class="bg-accent h-2.5 rounded-full" style={ `width: ${percentage}%` }></div>
+      </div>
     </div>
   </div>
 </div>

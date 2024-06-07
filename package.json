@@ -18,20 +18,23 @@
   "version": "1.0.0",
   "license": "AGPL-3.0-only",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "bunx --bun astro dev",
+    "build": "bunx --bun astro check && bunx --bun astro build",
+    "preview": "bunx --bun astro preview",
+    "astro": "bunx --bun astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
-    "@playform/compress": "^0.0.3",
-    "astro": "^4.7.1",
+    "@playform/compress": "^0.0.10",
+    "astro": "^4.10.0",
     "astrojs-service-worker": "^2.0.0",
-    "sharp": "^0.33.3",
-    "tailwindcss": "^3.4.3",
+    "sharp": "^0.33.4",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@9.0.6+sha256.0624e30eff866cdeb363b15061bdb7fd9425b17bc1bb42c22f5f4efdea21f6b3"
+  "devDependencies": {
+    "daisyui": "^4.12.2"
+  }
 }

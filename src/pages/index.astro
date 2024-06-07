@@ -18,7 +18,7 @@
 */
 
 import Layout from "@/layouts/Layout.astro";
-import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
 
 import html5 from "@/assets/html5.svg?raw";
 import css3 from "@/assets/css3.svg?raw"
@@ -34,18 +34,18 @@ import laptop from "@/assets/laptop.svg?raw";
 ---
 
 <Layout title="Home">
+	<Nav />
 	<main class="w-screen p-2 xl:p-8">
 		<div class="w-full xl:flex justify-around">
-			<div class="h-8 xl:hidden"></div>
 			<div class="flex flex-col items-center justify-center">
 				<div class="text-black dark:text-white w-40">
 					<Fragment set:html={ laptop } />
 				</div>
-				<h1 class="font-bold text-4xl text-black dark:text-white flex gap-2">Hi, I'm <p class="text-red-400 font-bold text-4xl">Mukul</p></h1>
-				<h2 class="text-gray-400 font-bold text-md">A Self-Taught Developer</h2>
+				<h1 class="font-bold text-4xl text-black dark:text-white flex gap-2">Hi, I'm <p class="text-accent font-bold text-4xl">Mukul</p></h1>
+				<h2 class="text-base font-bold text-md">A Self-Taught Developer</h2>
 			</div>
-			<div class="h-8 xl:hidden"></div>
-			<div class="grid gap-2">
+			<br />
+			<div class="grid place-items-center gap-2">
 				<LanguageCard image={ html5 } name="HTML" amount="Proficient" percentage={ 95 } />
 				<LanguageCard image={ css3 } name="CSS" amount="Proficient" percentage={ 95 } />
 				<LanguageCard image={ js } name="Javascript" amount="Proficient" percentage={ 95 } />
@@ -54,12 +54,10 @@ import laptop from "@/assets/laptop.svg?raw";
 				<LanguageCard image={ csharp } name="C#" amount="Learning" percentage={ 65 } />
 			</div>
 		</div>
-		<div class="h-8"></div>
+		<br />
 		<div class="grid place-items-center xl:grid-flow-col gap-2 w-full">
 			<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.pages.dev" />
 			<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
 		</div>
-		<div class="h-8"></div>
 	</main>
-	<Footer />
 </Layout>

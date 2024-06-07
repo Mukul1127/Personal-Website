@@ -27,19 +27,17 @@ interface Props {
 const { name, description, year, url } = Astro.props;
 ---
 
-<div class="min-w-80 w-min h-full p-5 rounded-lg bg-gray-700 border border-gray-500 shadow-xl dark:bg-gray-900 dark:border-gray-800">
-  <div class="flex justify-between items-center">
-    <h5 class="text-3xl font-bold text-white">{ name }</h5>
-    <span class="ml-6 bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">{ year }</span>
+<div class="card w-full md:w-fit md:h-full max-w-96 bg-neutral text-neutral-content">
+  <div class="card-body">
+    <div class="flex justify-between items-center">
+      <h2 class="card-title font-extrabold text-2xl">{ name }</h2>
+      <div class="badge badge-accent font-semibold">{ year }</div>
+    </div>
+    <p class="text-balance">{ description }</p>
+    { url ?
+    <div class="card-actions justify-end">
+      <a href={ url } class="btn btn-primary">Buy Now</a>
+    </div> 
+    : "" }
   </div>
-  <p class="text-gray-400 text-balance text-sm font-medium">{ description }</p>
-  { url ? 
-    <br />
-    <a href={ url } class="gap-2 hover:scale-105 transition-transform inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-red-400 hover:bg-red-500 focus:ring-red-600">
-      See it
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-5 w-5">
-        <path fill="white" d="M384 32c35 0 64 29 64 64v320c0 35-29 64-64 64H64c-35 0-64-29-64-64V96c0-35 29-64 64-64h320zm-64 281V176c0-9-7-16-16-16H167a23 23 0 0 0-16 39l33 33-66 66a19 19 0 0 0 0 28l36 36a19 19 0 0 0 28 0l66-66 33 33c5 5 10 7 16 7 13 0 23-10 23-23z"/>
-      </svg>
-    </a> 
-  : ""}
 </div>
