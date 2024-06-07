@@ -1,4 +1,22 @@
 ---
+/*
+  Mukul's Personal Website is a Personal Website 
+  Copyright (C) 2024 Mukul Kedia
+
+  Mukul's Personal Website is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Mukul's Personal Website is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
+*/
+
 const themes = [
   "light", "dark", "cupcake", "bumblebee",
   "emerald", "corporate", "synthwave", "retro",
@@ -14,15 +32,15 @@ import themeicon from "@/assets/themeicon.svg?raw"
 
 <div class="dropdown dropdown-end z-50">
   <div role="button" tabindex="0" class="btn btn-ghost flex gap-2">
-    <div class="w-5 h-5 stroke-current">
-      <Fragment set:html={themeicon} />
+    <div class="w-5 h-5">
+      <Fragment set:html={ themeicon } />
     </div>
     <p class="hidden md:block">Theme Changer</p>
   </div>
   <div title="Change Theme" class="dropdown-content">
     <div tabindex="0" class="bg-base-200 rounded-box h-[28.6rem] max-h-[calc(100vh-10rem)] w-56 overflow-y-auto border border-white/5 shadow-2xl outline outline-1 outline-black/5">
       <div class="grid grid-cols-1 gap-3 p-3">
-        {themes.map(theme => (
+        { themes.map(theme => (
           <button id={theme} data-theme={theme} class="theme-option rounded-btn flex p-3 items-center" type="button">
               <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible h-3 w-3 shrink-0">
                 <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
@@ -37,7 +55,7 @@ import themeicon from "@/assets/themeicon.svg?raw"
                 <span class="bg-neutral rounded-badge w-2" />
               </span>
           </button>
-        ))}
+        )) }
       </div>
     </div>
   </div>

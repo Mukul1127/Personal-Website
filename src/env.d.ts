@@ -1,4 +1,3 @@
-/// <reference path="../.astro/types.d.ts" />
 /*
   Mukul's Personal Website is a Personal Website 
   Copyright (C) 2024 Mukul Kedia

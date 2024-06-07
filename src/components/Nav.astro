@@ -18,10 +18,17 @@
 */
 
 import Themes from "./Themes.astro"
+import github from "@/assets/github.svg?raw"
 ---
-<div class="navbar bg-base-100 justify-between md:justify-around">
-  <div class="navbar-start">
-    <a class="btn btn-ghost text-xl">Home</a>
+<div class="z-50 sticky top-0 navbar bg-base-100/50 backdrop-blur justify-between md:justify-around">
+  <a href="/" class="btn btn-ghost text-xl">Home</a>
+  <div class="flex gap-2">
+    <a href="//github.com/Mukul1127/Personal-Website" target="_blank" class="flex gap-2 btn btn-ghost">
+      <div class="w-5 h-5">
+        <Fragment set:html={ github } />
+      </div>
+      <p class="hidden md:block">Source Code</p>
+    </a>
+    <Themes />
   </div>
-  <Themes />
 </div>
