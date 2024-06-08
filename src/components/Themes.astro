@@ -64,12 +64,17 @@ import themeicon from "@/assets/themeicon.svg?raw"
 <script is:inline>
   function setup() {
     if (localStorage.getItem("theme") === null) {
-      document.documentElement.setAttribute("data-theme", "mukuls");
       localStorage.setItem("theme", "mukuls");
+      document.documentElement.setAttribute("data-theme", "mukuls");
+      document.getElementById(`${localStorage.getItem("theme")}-svg`).classList.remove("invisible");
+      if (["mukuls", "dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(localStorage.getItem("theme"))) {
+        document.documentElement.setAttribute("data-dark", "true");
+      } else {
+        document.documentElement.setAttribute("data-dark", "false");
+      };
     } else {
       document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
       document.getElementById(`${localStorage.getItem("theme")}-svg`).classList.remove("invisible");
-
       if (["mukuls", "dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(localStorage.getItem("theme"))) {
         document.documentElement.setAttribute("data-dark", "true");
       } else {
@@ -85,7 +90,6 @@ import themeicon from "@/assets/themeicon.svg?raw"
         document.documentElement.setAttribute("data-theme", themeOption.id);
         localStorage.setItem("theme", themeOption.id);
         document.getElementById(`${themeOption.id}-svg`).classList.remove("invisible");
-
         if (["mukuls", "dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(themeOption.id)) {
           document.documentElement.setAttribute("data-dark", "true");
         } else {
