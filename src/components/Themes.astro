@@ -39,7 +39,7 @@ import themeicon from "@/assets/themeicon.svg?raw"
   </div>
   <div title="Change Theme" class="dropdown-content">
     <div tabindex="0" class="bg-base-200 rounded-box h-[28.6rem] max-h-[calc(100vh-10rem)] w-64 overflow-y-auto border border-white/5 shadow-2xl outline outline-1 outline-black/5">
-      <div class="grid grid-cols-1 gap-3 p-3">
+      <div class="grid grid-cols-1 gap-3 p-3 font-sans">
         { themes.map(theme => (
           <button id={theme} data-theme={theme} class="theme-option rounded-btn flex px-4 py-3 items-center text-left gap-3 hover:scale-105 transition-transform" type="button">
               <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible h-3 w-3 shrink-0">

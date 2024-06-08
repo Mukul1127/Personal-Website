@@ -36,16 +36,18 @@ import laptop from "@/assets/laptop.svg?raw";
 <Layout title="Home">
 	<Nav />
 	<main class="w-screen p-2 xl:p-8">
-		<div class="w-full xl:flex justify-around">
-			<div class="flex flex-col items-center justify-center">
-				<div class="text-black dark:text-white w-40">
-					<Fragment set:html={ laptop } />
-				</div>
-				<h1 class="font-bold text-4xl text-black dark:text-white flex gap-2">Hi, I'm <p class="text-accent font-bold text-4xl">Mukul</p></h1>
-				<h2 class="text-base font-bold text-md">A Self-Taught Developer</h2>
+		<div class="w-full grid place-items-center md:flex md:justify-center md:gap-4">
+			<div class="text-black dark:text-white w-40">
+				<Fragment set:html={ laptop } />
 			</div>
-			<br />
-			<div class="grid place-items-center gap-2">
+			<div class="text-center md:text-left">
+				<h1 class="font-bold text-4xl md:text-5xl text-black dark:text-white flex">Hi, I'm&nbsp;<p class="text-accent font-bold text-4xl md:text-5xl">Mukul</p></h1>
+				<h2 class="font-bold text-md md:text-xl">A Self-Taught Developer</h2>
+			</div>
+		</div>
+		<div class="h-5 md:h-20"></div>
+		<div class="md:flex w-full justify-around">
+			<div class="flex flex-col items-center gap-2">
 				<LanguageCard image={ html5 } name="HTML" amount="Proficient" percentage={ 95 } />
 				<LanguageCard image={ css3 } name="CSS" amount="Proficient" percentage={ 95 } />
 				<LanguageCard image={ js } name="Javascript" amount="Proficient" percentage={ 95 } />
@@ -53,11 +55,11 @@ import laptop from "@/assets/laptop.svg?raw";
 				<LanguageCard image={ java } name="Java" amount="Learning" percentage={ 65 } />
 				<LanguageCard image={ csharp } name="C#" amount="Learning" percentage={ 65 } />
 			</div>
-		</div>
-		<br />
-		<div class="grid place-items-center xl:grid-flow-col gap-2 w-full">
-			<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.pages.dev" />
-			<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
+			<br class="md:hidden" />
+			<div class="flex flex-col items-center gap-2">
+				<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.pages.dev" />
+				<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
+			</div>
 		</div>
 	</main>
 </Layout>

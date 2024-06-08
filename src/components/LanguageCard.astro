@@ -20,8 +20,8 @@
 const { image, name, amount,  percentage } = Astro.props;
 ---
 
-<div class="w-[21rem] bg-neutral text-neutral-content rounded-full hover:scale-105 transition-transform">
-  <div class="px-6 py-3 flex justify-between">
+<div class="w-[21rem] bg-neutral text-neutral-content rounded-box hover:scale-105 transition-transform">
+  <div class="px-4 py-3 flex justify-between">
     <div class="flex items-center gap-2">
       <div class="grid place-items-center h-8 w-8">
         <Fragment set:html={ image } />

@@ -30,6 +30,9 @@ export default {
       fontFamily: {
         sans: [
           "Inter", ...defaultTheme.fontFamily.sans
+        ],
+        mono: [
+          "CascadiaCode", ...defaultTheme.fontFamily.mono
         ]
       }
     }
@@ -59,15 +62,28 @@ export default {
           "--rounded-btn": "0.8rem",
           "--rounded-badge": "0.4rem",
           "--tab-radius": "0.7rem"
+        },
+        cyberpunk: {
+          "fontFamily": "CascadiaCode, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+          "primary": "oklch(74.22% 0.209 6.35)",
+          "secondary": "oklch(83.33% 0.184 204.72)",
+          "accent": "oklch(71.86% 0.2176 310.43)",
+          "neutral": "oklch(23.04% 0.065 269.31)",
+          "neutral-content": "oklch(94.51% 0.179 104.32)",
+          "base-100": "oklch(94.51% 0.179 104.32)",
+          "--rounded-box": "0",
+          "--rounded-btn": "0",
+          "--rounded-badge": "0",
+          "--tab-radius": "0",
         }
       },
       "light", "dark", "cupcake", "bumblebee",
-      "emerald", "corporate", "synthwave", "retro",
-      "cyberpunk", "valentine", "halloween", "garden",
-      "forest", "aqua", "lofi", "pastel", "fantasy",
-      "wireframe", "black", "luxury", "dracula", "cmyk", 
-      "autumn", "business", "acid", "lemonade", "night", 
-      "coffee", "winter", "dim", "nord", "sunset"
+      "emerald", "corporate", "synthwave", "retro", 
+      "valentine", "halloween", "garden", "forest", 
+      "aqua", "lofi", "pastel", "fantasy", "wireframe", 
+      "black", "luxury", "dracula", "cmyk", "autumn", 
+      "business", "acid", "lemonade", "night", "coffee", 
+      "winter", "dim", "nord", "sunset"
     ]
   }
 } satisfies Config
