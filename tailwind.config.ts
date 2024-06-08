@@ -39,6 +39,28 @@ export default {
   ],
   daisyui: {
     themes: [
+      {
+        mukuls: {
+          "primary": "#fca5a5",
+          "secondary": "#ef4444",
+          "accent": "#f87171",
+          "color-scheme": "dark",
+          "neutral": "oklch(26% 0.019 237.69)",
+          "neutral-content": "oklch(70% 0.019 237.69)",
+          "base-100": "oklch(22% 0.019 237.69)",
+          "base-200": "oklch(20% 0.019 237.69)",
+          "base-300": "oklch(18% 0.019 237.69)",
+          "base-content": "#9fb9d0",
+          "info": "#89e0eb",
+          "success": "#addfad",
+          "warning": "#f1c891",
+          "error": "#ffbbbd",
+          "--rounded-box": "1.2rem",
+          "--rounded-btn": "0.8rem",
+          "--rounded-badge": "0.4rem",
+          "--tab-radius": "0.7rem"
+        }
+      },
       "light", "dark", "cupcake", "bumblebee",
       "emerald", "corporate", "synthwave", "retro",
       "cyberpunk", "valentine", "halloween", "garden",

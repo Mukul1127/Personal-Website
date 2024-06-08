@@ -21,9 +21,5 @@
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-  src: url("Inter.woff2?v=4.0") format("woff2"),
-       url("Inter.woff2?v=4.0") format("woff2-variations"),
-       url("Inter.woff2?v=4.0") format("woff2 supports variations"),
-       url("Inter.woff2?v=4.0") format("woff2") tech("variations");
-  unicode-range: 0020—007F;
+  src: url("Inter.woff2") format("woff2");
 }

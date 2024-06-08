@@ -28,11 +28,9 @@ const { image, name, amount,  percentage } = Astro.props;
       </div>
       <h1 class="font-bold text-3xl">{ name }</h1>
     </div>
-    <div>
+    <div class="flex flex-col">
       <p class="font-semibold">{ amount }</p>
-      <div class="w-20 rounded-full h-2.5 bg-base-100">
-        <div class="bg-accent h-2.5 rounded-full" style={ `width: ${percentage}%` }></div>
-      </div>
+      <progress class="progress progress-accent w-20 h-2.5 bg-base-100" value={ percentage } max="100"></progress>
     </div>
   </div>
 </div>
