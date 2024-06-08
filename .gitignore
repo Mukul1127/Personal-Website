@@ -1,6 +1,5 @@
 dist/
 .astro/
 node_modules/
-pnpm-debug.log*
 .env
 .env.production
