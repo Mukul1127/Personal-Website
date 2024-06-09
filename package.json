@@ -23,7 +23,7 @@
     "preview": "bunx --bun astro preview",
     "check": "bunx --bun @biomejs/biome check . --write --no-errors-on-unmatched --files-ignore-unknown=true",
     "astro": "bunx --bun astro",
-    "lefthook": "lefthook"
+    "lefthook": "bunx --bun lefthook"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.1.5",

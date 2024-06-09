@@ -16,9 +16,9 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
+import daisyui from "daisyui";
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
-import daisyui from "daisyui";
 
 export default {
   content: ["./src/**/*.astro"],
