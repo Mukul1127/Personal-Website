@@ -18,16 +18,42 @@
 */
 
 const themes = [
-  "mukuls", "light", "dark", "cupcake", "bumblebee",
-  "emerald", "corporate", "synthwave", "retro",
-  "cyberpunk", "valentine", "halloween", "garden",
-  "forest", "aqua", "lofi", "pastel", "fantasy",
-  "wireframe", "black", "luxury", "dracula", "cmyk", 
-  "autumn", "business", "acid", "lemonade", "night", 
-  "coffee", "winter", "dim", "nord", "sunset"
-]
+  "mukuls",
+  "light",
+  "dark",
+  "cupcake",
+  "bumblebee",
+  "emerald",
+  "corporate",
+  "synthwave",
+  "retro",
+  "cyberpunk",
+  "valentine",
+  "halloween",
+  "garden",
+  "forest",
+  "aqua",
+  "lofi",
+  "pastel",
+  "fantasy",
+  "wireframe",
+  "black",
+  "luxury",
+  "dracula",
+  "cmyk",
+  "autumn",
+  "business",
+  "acid",
+  "lemonade",
+  "night",
+  "coffee",
+  "winter",
+  "dim",
+  "nord",
+  "sunset"
+];
 
-import themeicon from "@/assets/themeicon.svg?raw"
+import themeicon from "@/assets/themeicon.svg?raw";
 ---
 
 <div class="dropdown dropdown-end z-50">
@@ -41,7 +67,7 @@ import themeicon from "@/assets/themeicon.svg?raw"
     <div tabindex="0" class="bg-base-200 rounded-box h-[28.6rem] max-h-[calc(100vh-10rem)] w-64 overflow-y-auto border border-white/5 shadow-2xl outline outline-1 outline-black/5">
       <div class="grid grid-cols-1 gap-3 p-3 font-sans">
         { themes.map(theme => (
-          <button id={theme} data-theme={theme} class="theme-option rounded-btn flex px-4 py-3 items-center text-left gap-3 hover:scale-105 transition-transform" type="button">
+          <button id={ theme } data-theme={ theme } class="theme-option rounded-btn flex px-4 py-3 items-center text-left gap-3 hover:scale-105 transition-transform" type="button">
               <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible h-3 w-3 shrink-0">
                 <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
               </svg>

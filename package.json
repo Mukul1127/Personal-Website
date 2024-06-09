@@ -21,6 +21,8 @@
     "dev": "bunx --bun astro dev",
     "build": "bunx --bun astro build",
     "preview": "bunx --bun astro preview",
+    "format": "bunx --bun @biomejs/biome format . --write",
+    "lint": "bunx --bun @biomejs/biome lint . --write",
     "astro": "bunx --bun astro"
   },
   "dependencies": {
@@ -34,6 +36,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.8.0",
     "daisyui": "^4.12.2"
   }
 }
