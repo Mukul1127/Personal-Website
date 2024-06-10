@@ -35,30 +35,30 @@ import laptop from "@/assets/laptop.svg?raw";
 
 <Layout title="Home">
 	<Nav />
-	<main class="w-screen p-2 xl:p-8">
-		<div class="w-full grid place-items-center md:flex md:justify-center md:gap-4">
-			<div class="text-black dark:text-white w-40">
-				<Fragment set:html={ laptop } />
+	<main class="grid p-2 md:absolute md:inset-0 place-items-center xl:p-8">
+		<div class="grid gap-5 w-fit h-fit">
+			<div class="grid place-items-center md:flex md:justify-center md:gap-4">
+				<div class="w-40 text-black dark:text-white">
+					<Fragment set:html={ laptop } />
+				</div>
+				<div class="text-center md:text-left">
+					<h1 class="flex text-4xl font-bold text-black md:text-5xl dark:text-white">Hi, I'm&nbsp;<p class="text-4xl font-bold text-accent md:text-5xl">Mukul</p></h1>
+					<h2 class="font-bold text-md md:text-xl">A Self-Taught Developer</h2>
+				</div>
 			</div>
-			<div class="text-center md:text-left">
-				<h1 class="font-bold text-4xl md:text-5xl text-black dark:text-white flex">Hi, I'm&nbsp;<p class="text-accent font-bold text-4xl md:text-5xl">Mukul</p></h1>
-				<h2 class="font-bold text-md md:text-xl">A Self-Taught Developer</h2>
-			</div>
-		</div>
-		<div class="h-5 md:h-20"></div>
-		<div class="md:flex w-full justify-around">
-			<div class="flex flex-col items-center gap-2">
-				<LanguageCard image={ html5 } name="HTML" amount="Proficient" percentage={ 95 } />
-				<LanguageCard image={ css3 } name="CSS" amount="Proficient" percentage={ 95 } />
-				<LanguageCard image={ js } name="Javascript" amount="Proficient" percentage={ 95 } />
-				<LanguageCard image={ python } name="Python" amount="Proficient" percentage={ 95 } />
-				<LanguageCard image={ java } name="Java" amount="Learning" percentage={ 65 } />
-				<LanguageCard image={ csharp } name="C#" amount="Learning" percentage={ 65 } />
-			</div>
-			<br class="md:hidden" />
-			<div class="flex flex-col items-center gap-2">
-				<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.pages.dev" />
-				<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
+			<div class="flex flex-col items-center gap-7 md:flex-row md:items-start">
+				<div class="flex flex-col gap-2">
+					<LanguageCard image={ html5 } name="HTML" amount="Proficient" percentage={ 95 } />
+					<LanguageCard image={ css3 } name="CSS" amount="Proficient" percentage={ 95 } />
+					<LanguageCard image={ js } name="Javascript" amount="Proficient" percentage={ 95 } />
+					<LanguageCard image={ python } name="Python" amount="Proficient" percentage={ 95 } />
+					<LanguageCard image={ java } name="Java" amount="Learning" percentage={ 65 } />
+					<LanguageCard image={ csharp } name="C#" amount="Learning" percentage={ 65 } />
+				</div>
+				<div class="flex flex-col gap-2">
+					<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.pages.dev" />
+					<ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
+				</div>
 			</div>
 		</div>
 	</main>
