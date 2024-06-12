@@ -36,15 +36,15 @@ import linkout from "@/assets/linkout.svg?raw";
       <div class="font-semibold badge badge-accent">{ year }</div>
     </div>
     <p class="text-balance">{ description }</p>
-    { url ?
+    { url &&
     <div class="justify-end card-actions">
-      <a href={ url } target="_blank" class="flex items-center gap-2 btn btn-primary">
+      <a href={ url } target="_blank" class="flex items-center gap-2 btn btn-secondary">
         See it
         <div class="w-4 h-4">
           <Fragment set:html={ linkout } />
         </div>
       </a>
     </div> 
-    : "" }
+    }
   </div>
 </div>
