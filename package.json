@@ -28,15 +28,15 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
-    "@playform/compress": "^0.0.12",
-    "astro": "^4.10.1",
+    "@playform/compress": "^0.0.13",
+    "astro": "^4.10.2",
     "astrojs-service-worker": "^2.0.0",
     "sharp": "^0.33.4",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.0",
+    "@biomejs/biome": "^1.8.1",
     "daisyui": "^4.12.2",
     "lefthook": "^1.6.15"
   }

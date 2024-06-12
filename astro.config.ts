@@ -20,7 +20,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mksite.pages.dev/",
+  site: "https://www.mookul.dev",
   integrations: [
     (await import("astrojs-service-worker")).default(),
     (await import("@astrojs/tailwind")).default(),
