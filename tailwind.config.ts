@@ -54,7 +54,17 @@ export default {
           "--rounded-btn": "0.8rem",
           "--rounded-badge": "0.4rem",
           "--tab-radius": "0.7rem"
-        },
+        }
+      },
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      {
         cyberpunk: {
           fontFamily:
             "CascadiaCode, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
@@ -70,14 +80,6 @@ export default {
           "--tab-radius": "0"
         }
       },
-      "light",
-      "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
-      "synthwave",
-      "retro",
       "valentine",
       "halloween",
       "garden",
