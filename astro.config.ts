@@ -25,5 +25,8 @@ export default defineConfig({
     (await import("@astrojs/tailwind")).default(),
     (await import("@astrojs/sitemap")).default(),
     (await import("@playform/compress")).default()
-  ]
+  ],
+  build: {
+    assetsPrefix: import.meta.env.SITE
+  }
 });
