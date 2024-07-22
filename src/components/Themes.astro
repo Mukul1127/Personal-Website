@@ -36,22 +36,24 @@ import themeicon from "@/assets/themeicon.svg?raw";
   <div title="Change Theme" class="dropdown-content">
     <div tabindex="0" class="bg-base-200 rounded-box h-[28.6rem] max-h-[calc(100vh-10rem)] w-64 overflow-y-auto border border-white/5 shadow-2xl outline outline-1 outline-black/5">
       <div class="grid grid-cols-1 gap-3 p-3 font-sans">
-        { themes.map(theme => (
-          <button id={ theme } data-theme={ theme } class="flex items-center gap-3 px-4 py-3 text-left transition-transform theme-option rounded-btn hover:scale-105" type="button">
-              <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible w-3 h-3 shrink-0">
-                <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
-              </svg>
-              <span class="flex-grow text-sm font-medium">
-                { theme === "mukuls" ? "Mukul's" : theme[0]!.toUpperCase() + theme.substring(1) }
-              </span>
-              <span class="flex flex-wrap h-full gap-1 shrink-0">
-                <span class="w-2 bg-primary rounded-badge" />
-                <span class="w-2 bg-secondary rounded-badge" />
-                <span class="w-2 bg-accent rounded-badge" />
-                <span class="w-2 bg-neutral rounded-badge" />
-              </span>
-          </button>
-        )) }
+        { 
+          themes.map(theme => (
+            <button id={ theme } data-theme={ theme } class="flex items-center gap-3 px-4 py-3 text-left transition-transform theme-option rounded-btn hover:scale-105" type="button">
+                <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible w-3 h-3 shrink-0">
+                  <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                </svg>
+                <span class="flex-grow text-sm font-medium">
+                  { theme === "mukuls" ? "Mukul's" : theme[0]!.toUpperCase() + theme.substring(1) }
+                </span>
+                <span class="flex flex-wrap h-full gap-1 shrink-0">
+                  <span class="w-2 bg-primary rounded-badge" />
+                  <span class="w-2 bg-secondary rounded-badge" />
+                  <span class="w-2 bg-accent rounded-badge" />
+                  <span class="w-2 bg-neutral rounded-badge" />
+                </span>
+            </button>
+          ))
+        }
       </div>
     </div>
   </div>
