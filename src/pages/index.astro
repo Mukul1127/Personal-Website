@@ -20,12 +20,13 @@
 import Nav from "@/components/Nav.astro";
 import Layout from "@/layouts/Default.astro";
 
-import csharp from "@/assets/csharp.svg?raw";
-import css3 from "@/assets/css3.svg?raw";
 import html5 from "@/assets/html5.svg?raw";
-import java from "@/assets/java.svg?raw";
+import css3 from "@/assets/css3.svg?raw";
 import js from "@/assets/js.svg?raw";
 import python from "@/assets/python.svg?raw";
+import java from "@/assets/java.svg?raw";
+import csharp from "@/assets/csharp.svg?raw";
+import cplusplus from "@/assets/cplusplus.svg?raw";
 
 import LanguageCard from "@/components/LanguageCard.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
@@ -54,6 +55,7 @@ import laptop from "@/assets/laptop.svg?raw";
 					<LanguageCard image={ python } name="Python" amount="Proficient" percentage={ 95 } />
 					<LanguageCard image={ java } name="Java" amount="Learning" percentage={ 65 } />
 					<LanguageCard image={ csharp } name="C#" amount="Learning" percentage={ 65 } />
+					<LanguageCard image={ cplusplus } name="C++" amount="Learning" percentage={ 65 } />
 				</div>
 				<div class="flex flex-col gap-2">
 					<ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.mookul.dev" />
