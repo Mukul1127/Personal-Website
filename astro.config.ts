@@ -27,6 +27,6 @@ export default defineConfig({
     (await import("@playform/compress")).default()
   ],
   build: {
-    assetsPrefix: import.meta.env.SITE
+    assetsPrefix: "https://www.mookul.dev"
   }
 });
