@@ -1,3 +1,4 @@
+---
 /*
   Mukul's Personal Website is a Personal Website 
   Copyright (C) 2024 Mukul Kedia
@@ -16,18 +17,11 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import { defineConfig } from "astro/config";
+import Layout from "@/layouts/Code.astro";
+---
 
-// https://astro.build/config
-export default defineConfig({
-  site: "https://www.mookul.dev",
-  integrations: [
-    (await import("@astrojs/tailwind")).default(),
-    (await import("@playform/compress")).default()
-  ],
-  build: {
-    assetsPrefix: "https://www.mookul.dev"
-  },
-  output: "hybrid",
-  adapter: (await import("@astrojs/cloudflare")).default()
-});
+<Layout
+  code="500"
+  name="Internal Server Error"
+  message="Sorry, our server encountered an error generating this page."
+/>
