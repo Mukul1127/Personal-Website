@@ -19,7 +19,7 @@
 
 import tailwindConfig from "tailwind.config";
 
-const themes = tailwindConfig.daisyui.themes.map((item) =>
+const themes = tailwindConfig.daisyui.themes.map(item =>
   typeof item === "object" ? Object.keys(item)[0] : item
 ) as string[];
 
