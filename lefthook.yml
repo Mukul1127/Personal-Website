@@ -1,9 +1,0 @@
-pre-commit:
-  commands:
-    check:
-      run: pnpm check && git update-index
-
-skip_output:
-  - meta
-  - summary
-  - execution_info
