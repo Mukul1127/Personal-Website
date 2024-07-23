@@ -23,19 +23,18 @@ const { code, name, message } = Astro.props;
 
 import ThemeChanger from "@/components/Themes.astro";
 ---
+
 <Layout title={`${code} - ${name}`}>
   <main class="grid h-screen place-items-center bg-base">
     <div class="absolute top-0 right-0 p-4">
       <ThemeChanger />
     </div>
     <div class="text-center">
-      <p class="font-semibold text-accent">{ code }</p>
-      <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl text-primary">{ name }</h1>
-      <p class="mt-6 text-base font-semibold leading-7 text-balance">{ message }</p>
+      <p class="font-semibold text-accent">{code}</p>
+      <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl text-primary">{name}</h1>
+      <p class="mt-6 text-base font-semibold leading-7 text-balance">{message}</p>
       <div class="flex items-center justify-center mt-10 gap-x-6">
-        <a href={ import.meta.env.SITE } class="btn btn-accent">
-          Go back home
-        </a>
+        <a href={import.meta.env.SITE} class="btn btn-accent"> Go back home </a>
       </div>
     </div>
   </main>

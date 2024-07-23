@@ -23,7 +23,6 @@ export default defineConfig({
   site: "https://www.mookul.dev",
   integrations: [
     (await import("@astrojs/tailwind")).default(),
-    (await import("@astrojs/sitemap")).default(),
     (await import("@playform/compress")).default()
   ],
   build: {

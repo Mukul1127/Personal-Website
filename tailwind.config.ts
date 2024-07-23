@@ -36,42 +36,34 @@ export default {
     themes: [
       {
         mukuls: {
-          primary: "#fff",
-          secondary: "#fca5a5",
-          accent: "#f87171",
+          "primary": "#fff",
+          "secondary": "#fca5a5",
+          "accent": "#f87171",
           "color-scheme": "dark",
-          neutral: "oklch(26% 0.019 237.69)",
+          "neutral": "oklch(26% 0.019 237.69)",
           "neutral-content": "oklch(70% 0.019 237.69)",
           "base-100": "oklch(22% 0.019 237.69)",
           "base-200": "oklch(20% 0.019 237.69)",
           "base-300": "oklch(18% 0.019 237.69)",
           "base-content": "#9fb9d0",
-          info: "#89e0eb",
-          success: "#addfad",
-          warning: "#f1c891",
-          error: "#ffbbbd",
+          "info": "#89e0eb",
+          "success": "#addfad",
+          "warning": "#f1c891",
+          "error": "#ffbbbd",
           "--rounded-box": "1.2rem",
           "--rounded-btn": "0.8rem",
           "--rounded-badge": "0.4rem",
           "--tab-radius": "0.7rem"
         }
-      },
-      "light",
-      "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
-      "synthwave",
-      "retro",
+      }, "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro",
       {
         cyberpunk: {
-          fontFamily:
+          "fontFamily":
             "CascadiaCode, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-          primary: "oklch(74.22% 0.209 6.35)",
-          secondary: "oklch(83.33% 0.184 204.72)",
-          accent: "oklch(71.86% 0.2176 310.43)",
-          neutral: "oklch(23.04% 0.065 269.31)",
+          "primary": "oklch(74.22% 0.209 6.35)",
+          "secondary": "oklch(83.33% 0.184 204.72)",
+          "accent": "oklch(71.86% 0.2176 310.43)",
+          "neutral": "oklch(23.04% 0.065 269.31)",
           "neutral-content": "oklch(94.51% 0.179 104.32)",
           "base-100": "oklch(94.51% 0.179 104.32)",
           "--rounded-box": "0",
@@ -79,30 +71,9 @@ export default {
           "--rounded-badge": "0",
           "--tab-radius": "0"
         }
-      },
-      "valentine",
-      "halloween",
-      "garden",
-      "forest",
-      "aqua",
-      "lofi",
-      "pastel",
-      "fantasy",
-      "wireframe",
-      "black",
-      "luxury",
-      "dracula",
-      "cmyk",
-      "autumn",
-      "business",
-      "acid",
-      "lemonade",
-      "night",
-      "coffee",
-      "winter",
-      "dim",
-      "nord",
-      "sunset"
+      }, "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", 
+      "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business",
+      "acid", "lemonade", "night", "coffee", "winter", "dim", "nord", "sunset"
     ]
   }
 } satisfies Config;

@@ -19,7 +19,7 @@
 
 import tailwindConfig from "tailwind.config";
 
-const themes = tailwindConfig.daisyui.themes.map(item =>
+const themes = tailwindConfig.daisyui.themes.map((item) =>
   typeof item === "object" ? Object.keys(item)[0] : item
 ) as string[];
 
@@ -29,28 +29,26 @@ import themeicon from "@/assets/themeicon.svg?raw";
 <div class="z-50 dropdown dropdown-end">
   <div role="button" tabindex="0" class="flex gap-2 btn btn-ghost">
     <div class="w-5 h-5">
-      <Fragment set:html={ themeicon } />
+      <Fragment set:html={themeicon} />
     </div>
     <p class="hidden md:block">Theme Changer</p>
   </div>
   <div title="Change Theme" class="dropdown-content">
     <div tabindex="0" class="bg-base-200 rounded-box h-[28.6rem] max-h-[calc(100vh-10rem)] w-64 overflow-y-auto border border-white/5 shadow-2xl outline outline-1 outline-black/5">
       <div class="grid grid-cols-1 gap-3 p-3 font-sans">
-        { 
-          themes.map(theme => (
-            <button id={ theme } data-theme={ theme } class="flex items-center gap-3 px-4 py-3 text-left transition-transform theme-option rounded-btn hover:scale-105" type="button">
-                <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible w-3 h-3 shrink-0">
-                  <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
-                </svg>
-                <span class="flex-grow text-sm font-medium">
-                  { theme === "mukuls" ? "Mukul's" : theme[0]!.toUpperCase() + theme.substring(1) }
-                </span>
-                <span class="flex flex-wrap h-full gap-1 shrink-0">
-                  <span class="w-2 bg-primary rounded-badge" />
-                  <span class="w-2 bg-secondary rounded-badge" />
-                  <span class="w-2 bg-accent rounded-badge" />
-                  <span class="w-2 bg-neutral rounded-badge" />
-                </span>
+        {
+          themes.map((theme) => (
+            <button id={theme} data-theme={theme} class="flex items-center gap-3 px-4 py-3 text-left transition-transform theme-option rounded-btn hover:scale-105" type="button">
+              <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible w-3 h-3 shrink-0">
+                <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+              </svg>
+              <span class="flex-grow text-sm font-medium">{theme === "mukuls" ? "Mukul's" : theme[0]!.toUpperCase() + theme.substring(1)}</span>
+              <span class="flex flex-wrap h-full gap-1 shrink-0">
+                <span class="w-2 bg-primary rounded-badge" />
+                <span class="w-2 bg-secondary rounded-badge" />
+                <span class="w-2 bg-accent rounded-badge" />
+                <span class="w-2 bg-neutral rounded-badge" />
+              </span>
             </button>
           ))
         }
@@ -59,46 +57,28 @@ import themeicon from "@/assets/themeicon.svg?raw";
   </div>
 </div>
 
-<script is:inline>
-  function setup() {
-    if (localStorage.getItem("theme") === null) {
-      localStorage.setItem("theme", "mukuls");
-      document.documentElement.setAttribute("data-theme", "mukuls");
-      document.getElementById("mukuls-svg").classList.remove("invisible");
-      document.documentElement.setAttribute("data-dark", "true");
-    } else {
-      document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
-      document.getElementById(`${localStorage.getItem("theme")}-svg`).classList.remove("invisible");
-      if (["mukuls", "dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(localStorage.getItem("theme"))) {
-        document.documentElement.setAttribute("data-dark", "true");
-      } else {
-        document.documentElement.setAttribute("data-dark", "false");
-      };
-    };
-  }
-
-  document.addEventListener("astro:after-swap", setup);
-  setup();
-</script>
-
 <script>
   function setup() {
+    if (localStorage.getItem("theme") === null) setTheme("mukuls");
+    else setTheme(localStorage.getItem("theme")!);
+
     const themeOptions = document.getElementsByClassName("theme-option");
 
     for (const themeOption of themeOptions) {
       themeOption.addEventListener("click", () => {
         document.getElementById(`${localStorage.getItem("theme")}-svg`)!.classList.add("invisible");
-
-        localStorage.setItem("theme", themeOption.id);
-        document.documentElement.setAttribute("data-theme", themeOption.id);
-        document.getElementById(`${themeOption.id}-svg`)!.classList.remove("invisible");
-        if (["mukuls", "dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(themeOption.id)) {
-          document.documentElement.setAttribute("data-dark", "true");
-        } else {
-          document.documentElement.setAttribute("data-dark", "false");
-        };
+        setTheme(themeOption.id);
       });
-    };
+    }
+  }
+
+  function setTheme(theme: string) {
+    if (["mukuls", "dark", "synthwave", "halloween", "forest", "aqua", "black", 
+        "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(theme)) document.documentElement.setAttribute("data-dark", "true");
+    else document.documentElement.setAttribute("data-dark", "false");
+    document.documentElement.setAttribute("data-theme", theme);
+    document.getElementById(`${theme}-svg`)!.classList.remove("invisible");
+    localStorage.setItem("theme", theme);
   }
 
   document.addEventListener("astro:after-swap", setup);
