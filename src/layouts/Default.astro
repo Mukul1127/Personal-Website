@@ -17,11 +17,11 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
+import "@/styles/fonts.css";
+
 import { ViewTransitions } from "astro:transitions";
 
 import favicon from "@/assets/favicon.svg";
-
-import "@/styles/fonts.css";
 
 const { title } = Astro.props;
 ---
@@ -33,6 +33,8 @@ const { title } = Astro.props;
     <meta name="description" content="Mukul's Personal Website" />
     <meta name="generator" content={Astro.generator} />
 
+    <link rel="preload" href="/Inter.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/CascadiaCode.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
     <title>{`${title} - MK's Website`}</title>
     <ViewTransitions />
@@ -41,23 +43,3 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
-
-<style>
-  * {
-    line-height: 1.5rem;
-
-    color-scheme: dark;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-
-    font-feature-settings:
-      "ss01",
-      "cv05",
-      "ss03",
-      "case",
-      "cv06",
-      "cv11",
-      "liga" 1,
-      "calt" 1;
-  }
-</style>

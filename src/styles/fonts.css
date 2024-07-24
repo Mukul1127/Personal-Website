@@ -31,3 +31,8 @@
   font-style: normal;
   src: url("/CascadiaCode.woff2") format("woff2");
 }
+
+* {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv05", "ss03", "case", "cv06", "cv11", "liga" 1, "calt" 1;
+}
