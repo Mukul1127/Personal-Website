@@ -29,5 +29,7 @@ export default defineConfig({
     assetsPrefix: "https://www.mookul.dev"
   },
   output: "hybrid",
-  adapter: (await import("@astrojs/cloudflare")).default()
+  adapter: (await import("@astrojs/cloudflare")).default({
+    imageService: "cloudflare"
+  })
 });

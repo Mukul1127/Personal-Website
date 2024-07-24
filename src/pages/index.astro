@@ -43,67 +43,23 @@ import laptop from "@/assets/laptop.svg?raw";
           <Fragment set:html={laptop} />
         </div>
         <div class="text-center md:text-left">
-          <h1 class="flex text-4xl font-bold text-black md:text-5xl dark:text-white">Hi, I'm&nbsp;<p class="text-4xl font-bold text-accent md:text-5xl">Mukul</p></h1>
+          <h1 class="flex text-4xl font-bold text-black md:text-5xl dark:text-white">Hi, I'm&nbsp;<span class="text-accent">Mukul</span></h1>
           <h2 class="font-bold text-md md:text-xl">A Self-Taught Developer</h2>
         </div>
       </div>
       <div class="flex flex-col items-center gap-7 md:flex-row md:items-start">
         <div class="flex flex-col gap-2">
-          <LanguageCard
-            image={html5}
-            name="HTML"
-            amount="Proficient"
-            percentage={95}
-          />
-          <LanguageCard
-            image={css3}
-            name="CSS"
-            amount="Proficient"
-            percentage={95}
-          />
-          <LanguageCard
-            image={js}
-            name="Javascript"
-            amount="Proficient"
-            percentage={95}
-          />
-          <LanguageCard
-            image={python}
-            name="Python"
-            amount="Proficient"
-            percentage={95}
-          />
-          <LanguageCard
-            image={java}
-            name="Java"
-            amount="Learning"
-            percentage={65}
-          />
-          <LanguageCard
-            image={csharp}
-            name="C#"
-            amount="Learning"
-            percentage={65}
-          />
-          <LanguageCard
-            image={cplusplus}
-            name="C++"
-            amount="Learning"
-            percentage={65}
-          />
+          <LanguageCard image={html5} name="HTML" amount="Proficient" percentage={95} />
+          <LanguageCard image={css3} name="CSS" amount="Proficient" percentage={95} />
+          <LanguageCard image={js} name="Javascript" amount="Proficient" percentage={95} />
+          <LanguageCard image={python} name="Python" amount="Proficient" percentage={95} />
+          <LanguageCard image={java} name="Java" amount="Learning" percentage={65} />
+          <LanguageCard image={csharp} name="C#" amount="Learning" percentage={65} />
+          <LanguageCard image={cplusplus} name="C++" amount="Learning" percentage={65} />
         </div>
         <div class="flex flex-col gap-2">
-          <ProjectCard
-            name="MeteoNow"
-            description="A weather app made with the Open-Meteo API"
-            year="2023"
-            url="//meteonow.mookul.dev"
-          />
-          <ProjectCard
-            name="More Soon!"
-            description="I'll be working on more soon enough :)"
-            year="Future"
-          />
+          <ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.mookul.dev" />
+          <ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
         </div>
       </div>
     </div>
