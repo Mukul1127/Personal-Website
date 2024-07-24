@@ -34,5 +34,5 @@
 
 * {
   text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01", "cv05", "ss03", "case", "cv06", "cv11", "liga" 1, "calt" 1;
+  font-feature-settings: "ss01", "cv05", "ss03", "case", "cv06", "cv11", "cv12", "cv13", "liga" 1, "calt" 1;
 }
