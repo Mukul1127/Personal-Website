@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  tough-cookie: next
+  jsdom>tough-cookie: next
 
 importers:
 
