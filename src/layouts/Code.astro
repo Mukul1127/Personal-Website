@@ -21,13 +21,13 @@ import Layout from "@/layouts/Default.astro";
 
 const { code, name, message } = Astro.props;
 
-import ThemeChanger from "@/components/Themes.astro";
+import Themes from "@/components/Themes.astro";
 ---
 
 <Layout title={`${code} - ${name}`}>
   <main class="grid h-screen place-items-center bg-base">
     <div class="absolute top-0 right-0 p-4">
-      <ThemeChanger />
+      <Themes />
     </div>
     <div class="text-center">
       <p class="font-semibold text-accent">{code}</p>

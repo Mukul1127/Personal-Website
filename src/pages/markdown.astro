@@ -1,0 +1,140 @@
+---
+/*
+  Mukul's Personal Website is a Personal Website 
+  Copyright (C) 2024 Mukul Kedia
+
+  Mukul's Personal Website is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Mukul's Personal Website is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+export const prerender = false;
+
+const urlParams = new URLSearchParams(Astro.request.url.split("?")[1]);
+
+let url;
+
+if (urlParams.get("url") !== null) url = urlParams.get("url")!;
+else url = "https://raw.githubusercontent.com/github/cmark-gfm/master/test/spec.txt";
+
+import Layout from "@/layouts/Default.astro";
+import Nav from "@/components/Nav.astro";
+
+import copy from "@/assets/copy.svg?raw";
+import check from "@/assets/check.svg?raw";
+
+import { Marked } from "marked";
+import markedAlert from "marked-alert";
+
+import { JSDOM } from "jsdom";
+import DOMPurify from "dompurify";
+
+const window = new JSDOM("<!DOCTYPE html>").window;
+const purify = DOMPurify(window);
+
+const response = await fetch(url);
+const data = await response.text();
+
+const html = purify.sanitize(await new Marked().use(markedAlert()).parse(data.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/,"")));
+
+function addCopyButtons(dom: JSDOM) {
+  dom.window.document.querySelectorAll("pre").forEach(pre => {
+    const parent = pre.parentNode;
+
+    const wrapper = dom.window.document.createElement("div");
+    wrapper.classList.add("flex", "justify-between", "bg-[--tw-prose-pre-bg]", "rounded-[--rounded-btn]", "my-[1.7142857em]")
+
+    parent!.replaceChild(wrapper, pre);
+    wrapper.appendChild(pre);
+
+    pre.classList.add("m-0", "rounded-full");
+
+    const copyButton = dom.window.document.createElement("button");
+    copyButton.innerHTML = copy + check;
+    copyButton.classList.add("swap", "swap-rotate", "px-4", "text-[--tw-prose-pre-code]")
+    copyButton.setAttribute("onclick", `navigator.clipboard.writeText(this.parentElement.querySelector("code").textContent);
+                                        this.classList.add("swap-active");
+                                        setTimeout(() => this.classList.remove("swap-active"), 1500);`);
+
+    wrapper.append(copyButton);
+  });
+}
+
+function styleGFMAlerts(dom: JSDOM) {
+  Array.from(dom.window.document.getElementsByClassName("markdown-alert-title")).forEach(div => {
+    div.classList.add("flex", "items-center", "gap-2");
+    div.classList.remove("markdown-alert-title");
+
+    div.parentElement!.classList.add("border-l-4", "pl-4");
+    div.parentElement!.classList.remove("markdown-alert");
+
+    if (div.parentElement!.classList.contains("markdown-alert-note")) {
+      div.classList.add("text-blue-400");
+      div.parentElement!.classList.add("border-blue-500", "fill-blue-400");
+      div.parentElement!.classList.remove("markdown-alert-note");
+    };
+
+    if (div.parentElement!.classList.contains("markdown-alert-tip")) {
+      div.classList.add("text-green-400");
+      div.parentElement!.classList.add("border-green-500", "fill-green-400");
+      div.parentElement!.classList.remove("markdown-alert-tip");
+    };
+
+    if (div.parentElement!.classList.contains("markdown-alert-important")) {
+      div.classList.add("text-purple-400");
+      div.parentElement!.classList.add("border-purple-500", "fill-purple-400");
+      div.parentElement!.classList.remove("markdown-alert-important");
+    };
+
+    if (div.parentElement!.classList.contains("markdown-alert-warning")) {
+      div.classList.add("text-yellow-400");
+      div.parentElement!.classList.add("border-yellow-500", "fill-yellow-400");
+      div.parentElement!.classList.remove("markdown-alert-warning");
+    };
+
+    if (div.parentElement!.classList.contains("markdown-alert-caution")) {
+      div.classList.add("text-red-400");
+      div.parentElement!.classList.add("border-red-500", "fill-red-400");
+      div.parentElement!.classList.remove("markdown-alert-caution");
+    };
+  });
+}
+
+function removeCheckboxBullets(dom: JSDOM) {
+  dom.window.document.querySelectorAll("ul li input").forEach(input => {
+    input.parentElement!.parentElement!.classList.add("not-prose");
+  });
+}
+
+function modifyHTML(html: string) {
+  const dom = new JSDOM(html);
+
+  addCopyButtons(dom);
+
+  styleGFMAlerts(dom);
+  
+  removeCheckboxBullets(dom);
+
+  return dom.serialize();
+}
+
+const newhtml = modifyHTML(html);
+---
+
+<Layout title="Markdown Viewer">
+  <Nav />
+  <div class="w-full h-full grid place-items-center">
+    <div class="prose text-balance font-medium">
+      <Fragment set:html={newhtml} />
+    </div>
+  </div>
+</Layout>
