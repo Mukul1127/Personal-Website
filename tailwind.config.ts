@@ -61,8 +61,7 @@ export default {
       }, "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro",
       {
         cyberpunk: {
-          "fontFamily":
-            "CascadiaCode, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+          "fontFamily": "CascadiaCode, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
           "primary": "oklch(74.22% 0.209 6.35)",
           "secondary": "oklch(83.33% 0.184 204.72)",
           "accent": "oklch(71.86% 0.2176 310.43)",
