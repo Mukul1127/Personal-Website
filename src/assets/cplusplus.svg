@@ -1,3 +1,21 @@
+<!--
+  Mukul's Personal Website is a Personal Website 
+  Copyright (C) 2024 Mukul Kedia
+
+  Mukul's Personal Website is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Mukul's Personal Website is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
+-->
+
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 455 512" fill="currentColor">
   <path d="M435 113 247 5c-11-7-28-7-39 0L20 113c-11 7-20 22-20 34v218c1 14 8 26 20 34l188 108c11 7 28 7 39 0l188-108c13-8 19-21 20-34V147c0-13-8-26-20-34zM76 256c-1-148 197-213 283-76l-66 38a76 76 0 1 0 0 76l66 38c-76 131-279 84-283-76zm303 8h-17v17h-17v-17h-16v-16h16v-17h17v17h17zm63 0h-17v17h-16v-17h-17v-16h17v-17h16v17h17z"/>
 </svg>
