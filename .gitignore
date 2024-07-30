@@ -1,4 +1,4 @@
 dist/
 .astro/
+.wrangler/
 node_modules/
-pnpm-debug.log*
