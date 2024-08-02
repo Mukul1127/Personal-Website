@@ -25,9 +25,7 @@ import Themes from "@/components/Themes.astro";
   <a href="/" class="text-xl btn btn-ghost">Home</a>
   <div class="flex gap-2">
     <a href="//github.com/Mukul1127" target="_blank" class="flex gap-2 btn btn-ghost">
-      <div class="w-5 h-5">
-        <Fragment set:html={github} />
-      </div>
+      <div class="w-5 h-5" set:html={github} />
       <p class="hidden md:block">Github</p>
     </a>
     <Themes />

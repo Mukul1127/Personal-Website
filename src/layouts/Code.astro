@@ -19,12 +19,12 @@
 
 import Layout from "@/layouts/Default.astro";
 
-const { code, name, message } = Astro.props;
-
 import Themes from "@/components/Themes.astro";
+
+const { code, name, message } = Astro.props;
 ---
 
-<Layout title={`${code} - ${name}`}>
+<Layout title={code}>
   <main class="grid h-screen place-items-center bg-base">
     <div class="absolute top-0 right-0 p-4">
       <Themes />

@@ -28,9 +28,7 @@ import themeicon from "@/assets/themeicon.svg?raw";
 
 <div class="z-50 dropdown dropdown-end">
   <div role="button" tabindex="0" class="flex gap-2 btn btn-ghost">
-    <div class="w-5 h-5">
-      <Fragment set:html={themeicon} />
-    </div>
+    <div class="w-5 h-5" set:html={themeicon} />
     <p class="hidden md:block">Theme Changer</p>
   </div>
   <div title="Change Theme" class="dropdown-content">

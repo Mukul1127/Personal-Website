@@ -22,7 +22,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.astro"],
-  darkMode: ["selector", "[data-dark='true']"],
+  darkMode: ["selector", `[data-dark="true"]`],
   theme: {
     extend: {
       fontFamily: {
@@ -31,9 +31,7 @@ export default {
       }
     }
   },
-  plugins: [
-    daisyui
-  ],
+  plugins: [daisyui],
   daisyui: {
     logs: false,
     themes: [
