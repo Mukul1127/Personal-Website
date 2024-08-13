@@ -1,5 +1,5 @@
 /*
-  Mukul's Personal Website is a Personal Website 
+  Mukul's Personal Website is a Website 
   Copyright (C) 2024 Mukul Kedia
 
   Mukul's Personal Website is free software: you can redistribute it and/or modify
