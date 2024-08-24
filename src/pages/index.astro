@@ -1,6 +1,6 @@
 ---
 /*
-  Mukul's Personal Website is a Website 
+  Mukul's Personal Website is a Website
   Copyright (C) 2024 Mukul Kedia
 
   Mukul's Personal Website is free software: you can redistribute it and/or modify
@@ -19,14 +19,6 @@
 
 import Nav from "@/components/Nav.astro";
 import Layout from "@/layouts/Default.astro";
-
-import cplusplus from "@/assets/cplusplus.svg?raw";
-import csharp from "@/assets/csharp.svg?raw";
-import css3 from "@/assets/css3.svg?raw";
-import html5 from "@/assets/html5.svg?raw";
-import java from "@/assets/java.svg?raw";
-import js from "@/assets/js.svg?raw";
-import python from "@/assets/python.svg?raw";
 
 import LanguageCard from "@/components/LanguageCard.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
@@ -47,13 +39,17 @@ import laptop from "@/assets/laptop.svg?raw";
       </div>
       <div class="flex flex-col items-center gap-7 md:flex-row md:items-start">
         <div class="flex flex-col gap-2">
-          <LanguageCard image={html5} name="HTML" amount="Proficient" percentage={95} />
-          <LanguageCard image={css3} name="CSS" amount="Proficient" percentage={95} />
-          <LanguageCard image={js} name="Javascript" amount="Proficient" percentage={95} />
-          <LanguageCard image={python} name="Python" amount="Proficient" percentage={95} />
-          <LanguageCard image={java} name="Java" amount="Learning" percentage={65} />
-          <LanguageCard image={csharp} name="C#" amount="Learning" percentage={65} />
-          <LanguageCard image={cplusplus} name="C++" amount="Learning" percentage={65} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=html" name="HTML" amount="Proficient" percentage={95} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=css" name="CSS" amount="Proficient" percentage={95} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=js" name="Javascript" amount="Proficient" percentage={95} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=ts" name="Typescript" amount="Proficient" percentage={95} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=cs" name="C" amount="Learning" percentage={75} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=cs" name="C#" amount="Learning" percentage={75} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=cpp" name="C++" amount="Learning" percentage={75} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=zig" name="Zig" amount="Learning" percentage={75} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=java" name="Java" amount="Proficient" percentage={95} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=kotlin" name="Kotlin" amount="Proficient" percentage={95} />
+          <LanguageCard icon="https://skillicons.dev/icons?i=py" name="Python" amount="Proficient" percentage={95} />
         </div>
         <div class="flex flex-col gap-2">
           <ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.mookul.dev" />

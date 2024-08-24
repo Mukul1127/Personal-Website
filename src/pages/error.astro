@@ -1,6 +1,6 @@
 ---
 /*
-  Mukul's Personal Website is a Website 
+  Mukul's Personal Website is a Website
   Copyright (C) 2024 Mukul Kedia
 
   Mukul's Personal Website is free software: you can redistribute it and/or modify
@@ -21,11 +21,19 @@ export const prerender = false;
 
 const urlParams = new URLSearchParams(Astro.request.url.split("?")[1]);
 
+const show404 = urlParams.get("code") === null && urlParams.get("name") === null && urlParams.get("message") === null;
+
 import Layout from "@/layouts/Code.astro";
 ---
 
-<Layout
-  code={urlParams.get("code")}
-  name={urlParams.get("name")}
-  message={urlParams.get("message")}
-/>
+{
+  show404 ? <Layout
+    code={404}
+    name={"Not Found"}
+    message={"Sorry, we couldn't find the page you're looking for."}
+  /> : <Layout
+    code={parseInt(urlParams.get("code") || "")}
+    name={urlParams.get("name") || ""}
+    message={urlParams.get("message") || ""}
+  />
+}

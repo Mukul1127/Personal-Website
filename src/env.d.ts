@@ -1,5 +1,7 @@
+/// <reference path="../.astro/types.d.ts" />
+
 /*
-  Mukul's Personal Website is a Website 
+  Mukul's Personal Website is a Website
   Copyright (C) 2024 Mukul Kedia
 
   Mukul's Personal Website is free software: you can redistribute it and/or modify
@@ -15,5 +17,3 @@
   You should have received a copy of the GNU Affero General Public License
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
-
-/// <reference types="astro/client" />

@@ -1,6 +1,6 @@
 ---
 /*
-  Mukul's Personal Website is a Website 
+  Mukul's Personal Website is a Website
   Copyright (C) 2024 Mukul Kedia
 
   Mukul's Personal Website is free software: you can redistribute it and/or modify
@@ -21,10 +21,16 @@ import Layout from "@/layouts/Default.astro";
 
 import Themes from "@/components/Themes.astro";
 
+interface Props {
+  code: number;
+  name: string;
+  message: string;
+}
+
 const { code, name, message } = Astro.props;
 ---
 
-<Layout title={code}>
+<Layout title={code.toString()}>
   <main class="grid h-screen place-items-center bg-base">
     <div class="absolute top-0 right-0 p-4">
       <Themes />
