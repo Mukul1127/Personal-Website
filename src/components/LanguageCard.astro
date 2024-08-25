@@ -22,22 +22,22 @@ import { Image } from "astro:assets";
 interface Props {
   icon: string;
   name: string;
-  amount: string;
+  label: string;
   percentage: number;
 }
 
-const { icon, name, amount, percentage } = Astro.props;
+const { icon, name, label, percentage } = Astro.props;
 ---
 
 <div class="bg-neutral text-neutral-content rounded-box hover:scale-105 transition-transform">
   <div class="flex justify-between px-4 py-3 gap-10">
     <div class="flex items-center gap-2">
-      <Image src={ icon } alt={ name } width={ 48 } height={ 48 } class="grid w-8 h-8 place-items-center" />
+      <Image src={`https://skillicons.dev/icons?i=${icon}`} alt={`${name} Icon`} width=32 height=32 />
       <h1 class="text-3xl font-bold">{name}</h1>
     </div>
     <div class="flex flex-col">
-      <p class="font-semibold">{amount}</p>
-      <progress class="progress progress-accent w-20 h-2.5 bg-base-100" value={percentage} max="100"></progress>
+      <p class="font-semibold">{label}</p>
+      <progress class="progress progress-primary w-20 h-2.5 bg-base-100" value={percentage} max=100></progress>
     </div>
   </div>
 </div>

@@ -37,8 +37,8 @@ export default {
     themes: [
       {
         mukuls: {
-          "primary": "#fff",
-          "secondary": "#fca5a5",
+          "primary": "#93c5fd",
+          "secondary": "#86efac",
           "accent": "#f87171",
           "color-scheme": "dark",
           "neutral": "oklch(26% 0.019 237.69)",
