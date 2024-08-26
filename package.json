@@ -21,21 +21,30 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "wrangler pages dev ./dist",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier . --write",
+    "lint": "eslint --flag unstable_ts_config"
   },
   "devDependencies": {
     "@astrojs/cloudflare": "^11.0.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@eslint/js": "^9.9.1",
     "@playform/compress": "^0.1.1",
-    "astro": "^4.14.2",
+    "@typescript-eslint/parser": "^8.2.0",
+    "astro": "^4.14.5",
     "daisyui": "^4.12.10",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-tailwind": "^0.2.1",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
-    "wrangler": "next"
-  },
-  "pnpm": {
-    "overrides": {
-      "wrangler": "$wrangler"
-    }
+    "typescript-eslint": "^8.2.0",
+    "wrangler": "^3.72.2"
   }
 }

@@ -21,11 +21,11 @@ import github from "@/assets/github.svg?raw";
 import Themes from "@/components/Themes.astro";
 ---
 
-<div class="sticky top-0 z-50 justify-between navbar bg-base-100/50 backdrop-blur md:justify-around">
-  <a href="/" class="text-xl btn btn-ghost">Home</a>
+<div class="navbar sticky top-0 z-50 justify-between bg-base-100/50 backdrop-blur md:justify-around">
+  <a href="/" class="btn btn-ghost text-xl">Home</a>
   <div class="flex gap-2">
-    <a href="//github.com/Mukul1127" target="_blank" class="flex gap-2 btn btn-ghost">
-      <div class="w-5 h-5" set:html={github} />
+    <a href="//github.com/Mukul1127" target="_blank" class="btn btn-ghost flex gap-2">
+      <div class="size-5" set:html={github} />
       <p class="hidden md:block">Github</p>
     </a>
     <Themes />

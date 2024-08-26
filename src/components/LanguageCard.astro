@@ -29,15 +29,15 @@ interface Props {
 const { icon, name, label, percentage } = Astro.props;
 ---
 
-<div class="bg-neutral text-neutral-content rounded-box hover:scale-105 transition-transform">
-  <div class="flex justify-between px-4 py-3 gap-10">
+<div class="rounded-box bg-neutral text-neutral-content transition-transform hover:scale-105">
+  <div class="flex justify-between gap-10 px-4 py-3">
     <div class="flex items-center gap-2">
-      <Image src={`https://skillicons.dev/icons?i=${icon}`} alt={`${name} Icon`} width=32 height=32 />
+      <Image src={`https://skillicons.dev/icons?i=${icon}`} alt={`${name} Icon`} width="32" height="32" />
       <h1 class="text-3xl font-bold">{name}</h1>
     </div>
     <div class="flex flex-col">
       <p class="font-semibold">{label}</p>
-      <progress class="progress progress-primary w-20 h-2.5 bg-base-100" value={percentage} max=100></progress>
+      <progress class="progress progress-primary h-2.5 w-20 bg-base-100" value={percentage} max="100"></progress>
     </div>
   </div>
 </div>

@@ -29,20 +29,22 @@ const { name, description, year, url } = Astro.props;
 import linkout from "@/assets/linkout.svg?raw";
 ---
 
-<div class="w-full card max-w-96 bg-neutral text-neutral-content hover:scale-105 transition-transform">
+<div class="card w-full max-w-96 bg-neutral text-neutral-content transition-transform hover:scale-105">
   <div class="card-body">
     <div class="flex items-center justify-between">
-      <h2 class="text-2xl font-extrabold card-title">{name}</h2>
-      <div class="font-semibold badge badge-primary">{year}</div>
+      <h2 class="card-title text-2xl font-extrabold">{name}</h2>
+      <div class="badge badge-primary font-semibold">{year}</div>
     </div>
     <p class="text-balance font-semibold">{description}</p>
     {
-      url && <div class="justify-end card-actions">
-        <a href={url} target="_blank" class="flex items-center gap-2 btn btn-secondary">
-          See it
-          <div class="w-4 h-4" set:html={linkout} />
-        </a>
-      </div>
+      url && (
+        <div class="card-actions justify-end">
+          <a href={url} target="_blank" class="btn btn-secondary flex items-center gap-2">
+            See it
+            <div class="size-4" set:html={linkout} />
+          </a>
+        </div>
+      )
     }
   </div>
 </div>
