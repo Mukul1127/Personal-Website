@@ -29,5 +29,5 @@
   ],
   experimentalTernaries: true,
   bracketSameLine: true,
-  printWidth: 140,
+  printWidth: 200,
 }

@@ -37,12 +37,8 @@ const { code, name, message } = Astro.props;
     </div>
     <div class="text-center">
       <p class="font-semibold text-accent">{code}</p>
-      <h1 class="mt-4 text-3xl font-bold tracking-tight text-primary sm:text-5xl">
-        {name}
-      </h1>
-      <p class="mt-6 text-balance text-base font-semibold leading-7">
-        {message}
-      </p>
+      <h1 class="mt-4 text-3xl font-bold tracking-tight text-primary sm:text-5xl">{name}</h1>
+      <p class="mt-6 text-balance text-base font-semibold leading-7">{message}</p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <a href={import.meta.env.SITE} class="btn btn-accent"> Go back home </a>
       </div>
