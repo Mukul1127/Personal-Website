@@ -17,7 +17,6 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import github from "@/assets/github.svg?raw";
 import Themes from "@/components/Themes.astro";
 ---
 
@@ -25,8 +24,8 @@ import Themes from "@/components/Themes.astro";
   <a href="/" class="btn btn-ghost text-xl">Mukul's Space</a>
   <div class="flex gap-2">
     <a href="//github.com/Mukul1127" target="_blank" class="btn btn-ghost flex gap-2">
-      <div class="size-5" set:html={github} />
-      <p class="hidden md:block">Github</p>
+      <i class="fa-brands fa-github-alt size-5"></i>
+      <p class="hidden sm:block">Github</p>
     </a>
     <Themes />
   </div>

@@ -20,14 +20,12 @@
 import tailwindConfig from "tailwind.config";
 
 const themes = tailwindConfig.daisyui.themes.map((item) => (typeof item === "object" ? Object.keys(item)[0] : item)) as string[];
-
-import themeicon from "@/assets/themeicon.svg?raw";
 ---
 
 <div class="dropdown dropdown-end z-50">
   <div role="button" tabindex="0" class="btn btn-ghost flex gap-2">
-    <div class="size-5" set:html={themeicon} />
-    <p class="hidden md:block">Theme Changer</p>
+    <i class="fa-regular fa-swatchbook size-4"></i>
+    <p class="hidden sm:block">Theme Changer</p>
   </div>
   <div title="Change Theme" class="dropdown-content">
     <div tabindex="0" class="h-[28.6rem] max-h-[calc(100vh-10rem)] w-64 overflow-y-auto rounded-box border border-white/5 bg-base-200 shadow-2xl outline outline-1 outline-black/5">
