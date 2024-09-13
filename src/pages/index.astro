@@ -26,9 +26,9 @@ import ProjectCard from "@/components/ProjectCard.astro";
 
 <Layout title="Home">
   <Nav />
-  <main class="grid place-items-center lg:grid-flow-col gap-4 p-8">
+  <main class="grid place-items-center gap-4 p-8 lg:grid-flow-col">
     <div class="flex flex-col sm:flex-row sm:gap-12 lg:flex-col lg:gap-0">
-      <i class="fa-solid fa-laptop-code size-60 text-black dark:text-white"></i>
+      <i class="fa-solid fa-laptop-binary size-60 text-black dark:text-white"></i>
       <div class="space-y-1 font-bold sm:mt-6 lg:mt-0">
         <h1 class="flex text-4xl text-black dark:text-white">
           Hi, I'm&nbsp;<span class="text-accent">Mukul</span>
@@ -36,7 +36,7 @@ import ProjectCard from "@/components/ProjectCard.astro";
         <h2 class="md:text-xl">A Self-Taught Developer</h2>
         <br />
         <a class="flex items-center gap-2">
-          <i class="fa-solid fa-location-crosshairs"></i>
+          <i class="fa-regular fa-location-crosshairs"></i>
           Michigan, US
         </a>
         <a class="flex items-center gap-2">
@@ -52,17 +52,17 @@ import ProjectCard from "@/components/ProjectCard.astro";
 
     <div class="grid gap-4 sm:grid-flow-col">
       <div class="flex flex-col gap-2">
-        <LanguageCard icon="html" name="HTML" label="Proficient" percentage={95} />
-        <LanguageCard icon="css" name="CSS" label="Proficient" percentage={95} />
-        <LanguageCard icon="js" name="Javascript" label="Proficient" percentage={95} />
-        <LanguageCard icon="ts" name="Typescript" label="Proficient" percentage={95} />
-        <LanguageCard icon="c" name="C" label="Learning" percentage={75} />
-        <LanguageCard icon="cs" name="C#" label="Learning" percentage={75} />
-        <LanguageCard icon="cpp" name="C++" label="Learning" percentage={75} />
-        <LanguageCard icon="zig" name="Zig" label="Learning" percentage={75} />
-        <LanguageCard icon="java" name="Java" label="Proficient" percentage={95} />
-        <LanguageCard icon="kotlin" name="Kotlin" label="Proficient" percentage={95} />
-        <LanguageCard icon="py" name="Python" label="Proficient" percentage={95} />
+        <LanguageCard icon="HTML" name="HTML" label="Proficient" percentage={95} />
+        <LanguageCard icon="CSS" name="CSS" label="Proficient" percentage={95} />
+        <LanguageCard icon="JavaScript" name="Javascript" label="Proficient" percentage={95} />
+        <LanguageCard icon="TypeScript" name="Typescript" label="Proficient" percentage={95} />
+        <LanguageCard icon="Java-Dark" name="Java" label="Proficient" percentage={95} />
+        <LanguageCard icon="Kotlin-Dark" name="Kotlin" label="Proficient" percentage={95} />
+        <LanguageCard icon="Python-Dark" name="Python" label="Proficient" percentage={95} />
+        <LanguageCard icon="C" name="C" label="Learning" percentage={75} />
+        <LanguageCard icon="CS" name="C#" label="Learning" percentage={75} />
+        <LanguageCard icon="CPP" name="C++" label="Learning" percentage={75} />
+        <LanguageCard icon="Zig-Dark" name="Zig" label="Learning" percentage={75} />
       </div>
       <div class="flex flex-col gap-2">
         <ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.mookul.dev" />
