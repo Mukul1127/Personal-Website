@@ -26,11 +26,11 @@
     "lint": "eslint --flag unstable_ts_config"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^5.1.1",
     "@eslint/js": "^9.10.0",
     "@playform/compress": "^0.1.1",
     "@typescript-eslint/parser": "^8.6.0",
-    "astro": "^4.15.6",
+    "astro": "^4.15.7",
     "daisyui": "^4.12.10",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
