@@ -23,7 +23,13 @@ const SITE = "https://www.mookul.dev";
 // https://astro.build/config
 export default defineConfig({
   site: SITE,
-  integrations: [(await import("@astrojs/tailwind")).default(), (await import("@playform/compress")).default()],
+  integrations: [
+    (await import("@astrojs/tailwind")).default(),
+    (await import("@playform/compress")).default(),
+    (await import("@playform/inline")).default({
+      Critters: { publicPath: SITE },
+    }),
+  ],
   build: {
     assetsPrefix: SITE,
   },
