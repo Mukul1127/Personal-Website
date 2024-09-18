@@ -30,5 +30,5 @@ export default defineConfig({
   output: "hybrid",
   adapter: (await import("@astrojs/cloudflare")).default({
     imageService: "cloudflare",
-  })
+  }),
 });

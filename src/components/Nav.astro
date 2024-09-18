@@ -18,13 +18,15 @@
 */
 
 import Themes from "@/components/Themes.astro";
+
+import githubAlt from "@/assets/fontawesome/github-alt.svg?raw";
 ---
 
 <nav class="navbar sticky top-0 z-50 justify-between bg-base-100/50 backdrop-blur md:justify-around">
   <a href="/" class="btn btn-ghost text-xl">Mukul's Space</a>
   <div class="flex gap-2">
     <a aria-label="Open Mukul's Github Page" href="//github.com/Mukul1127" target="_blank" class="btn btn-ghost flex gap-2">
-      <i class="fa-brands fa-github-alt size-5"></i>
+      <div set:html={githubAlt} class="size-5 fill-current" />
       <p class="hidden sm:block">Github</p>
     </a>
     <Themes />

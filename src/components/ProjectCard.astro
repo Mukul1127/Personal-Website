@@ -25,6 +25,8 @@ interface Props {
 }
 
 const { name, description, year, url } = Astro.props;
+
+import arrowUpRightFromSquare from "@/assets/fontawesome/arrow-up-right-from-square.svg?raw";
 ---
 
 <div class="card w-full max-w-96 bg-neutral text-neutral-content transition-transform hover:scale-105">
@@ -39,7 +41,7 @@ const { name, description, year, url } = Astro.props;
         <div class="card-actions justify-end">
           <a href={url} target="_blank" class="btn btn-secondary flex items-center gap-2">
             See it
-            <i class="fa-solid fa-arrow-up-right-from-square size-3" />
+            <div set:html={arrowUpRightFromSquare} class="size-3 fill-current" />
           </a>
         </div>
       )
