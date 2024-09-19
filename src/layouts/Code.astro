@@ -31,7 +31,7 @@ const { code, name, message } = Astro.props;
 ---
 
 <Layout title={code.toString()}>
-  <main class="bg-base grid h-screen place-items-center">
+  <main class="grid h-screen place-items-center">
     <div class="absolute right-0 top-0 p-4">
       <Themes />
     </div>
@@ -40,7 +40,7 @@ const { code, name, message } = Astro.props;
       <h1 class="mt-4 text-3xl font-bold tracking-tight text-primary sm:text-5xl">{name}</h1>
       <p class="mt-6 text-balance text-base font-semibold leading-7">{message}</p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
-        <a href={import.meta.env.SITE} class="btn btn-accent"> Go back home </a>
+        <a href={import.meta.env.SITE} class="btn btn-accent">Go back home</a>
       </div>
     </div>
   </main>

@@ -20,7 +20,7 @@
 import Nav from "@/components/Nav.astro";
 import Layout from "@/layouts/Default.astro";
 
-import LanguageCard from "@/components/LanguageCard.astro";
+import LanguageCardList from "@/components/LanguageCardList.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 
 import laptopBinary from "@/assets/fontawesome/laptop-binary.svg?raw";
@@ -56,19 +56,7 @@ import envelope from "@/assets/fontawesome/envelope.svg?raw";
     </div>
 
     <div class="grid gap-4 sm:grid-flow-col">
-      <div class="flex flex-col gap-2">
-        <LanguageCard name="HTML" label="Proficient" percentage={95} />
-        <LanguageCard name="CSS" label="Proficient" percentage={95} />
-        <LanguageCard name="Javascript" label="Proficient" percentage={95} />
-        <LanguageCard name="Typescript" label="Proficient" percentage={95} />
-        <LanguageCard name="Java" label="Proficient" percentage={95} />
-        <LanguageCard name="Kotlin" label="Proficient" percentage={95} />
-        <LanguageCard name="Python" label="Proficient" percentage={95} />
-        <LanguageCard name="C" label="Learning" percentage={75} />
-        <LanguageCard name="C#" label="Learning" percentage={75} />
-        <LanguageCard name="C++" label="Learning" percentage={75} />
-        <LanguageCard name="Zig" label="Learning" percentage={75} />
-      </div>
+      <LanguageCardList />
       <div class="flex flex-col gap-2">
         <ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.mookul.dev" />
         <ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />

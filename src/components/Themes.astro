@@ -34,7 +34,7 @@ import swatchbook from "@/assets/fontawesome/swatchbook.svg?raw";
       <div class="grid grid-cols-1 gap-3 p-3 font-sans">
         {
           themes.map((theme) => (
-            <button id={theme} data-theme={theme} class="theme-option flex items-center gap-3 rounded-btn px-4 py-3 text-left transition-transform hover:scale-105" type="button">
+            <button id={theme} data-theme={theme} name="theme-option" class="flex items-center gap-3 rounded-btn px-4 py-3 text-left transition-transform hover:scale-105" type="button">
               <svg id={`${theme}-svg`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="invisible size-3 shrink-0">
                 <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
               </svg>
@@ -55,10 +55,12 @@ import swatchbook from "@/assets/fontawesome/swatchbook.svg?raw";
 
 <script>
   function setup() {
-    if (localStorage.getItem("theme") === null) setTheme("mukuls");
-    else setTheme(localStorage.getItem("theme")!);
+    const theme = localStorage.getItem("theme");
 
-    const themeOptions = document.getElementsByClassName("theme-option");
+    if (theme === null) setTheme("mukuls");
+    else setTheme(theme);
+
+    const themeOptions = document.getElementsByName("theme-option");
 
     for (const themeOption of themeOptions) {
       themeOption.addEventListener("click", () => {
@@ -72,6 +74,7 @@ import swatchbook from "@/assets/fontawesome/swatchbook.svg?raw";
     if (["mukuls", "dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim", "sunset"].includes(theme))
       document.documentElement.setAttribute("data-dark", "true");
     else document.documentElement.setAttribute("data-dark", "false");
+
     document.documentElement.setAttribute("data-theme", theme);
     document.getElementById(`${theme}-svg`)!.classList.remove("invisible");
     localStorage.setItem("theme", theme);

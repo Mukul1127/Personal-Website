@@ -31,4 +31,7 @@ export default [
   ...tailwind.configs["flat/recommended"],
   ...eslintPluginAstro.configs["flat/recommended"],
   eslintPluginPrettierRecommended,
+  {
+    ignores: ["**/*.d.ts"],
+  },
 ] satisfies Linter.FlatConfig[];
