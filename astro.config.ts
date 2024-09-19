@@ -33,4 +33,8 @@ export default defineConfig({
   build: {
     assetsPrefix: SITE,
   },
+  output: "hybrid",
+  adapter: (await import("@astrojs/cloudflare")).default({
+    imageService: "cloudflare",
+  }),
 });
