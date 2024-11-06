@@ -1,30 +1,6 @@
 {
-  "//": [
-    "Mukul's Personal Website is a Website",
-    "Copyright (C) 2024 Mukul Kedia",
-    "Mukul's Personal Website is free software: you can redistribute it and/or modify",
-    "it under the terms of the GNU Affero General Public License as published",
-    "by the Free Software Foundation, either version 3 of the License, or",
-    "(at your option) any later version.",
-    "Mukul's Personal Website is distributed in the hope that it will be useful,",
-    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
-    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-    "GNU Affero General Public License for more details.",
-    "You should have received a copy of the GNU Affero General Public License",
-    "along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>."
-  ],
   "name": "personal-website",
-  "type": "module",
   "version": "1.0.0",
-  "license": "AGPL-3.0-only",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "wrangler pages dev ./dist",
-    "astro": "astro",
-    "format": "prettier . --write",
-    "lint": "eslint --flag unstable_ts_config"
-  },
   "devDependencies": {
     "@astrojs/cloudflare": "^11.2.0",
     "@astrojs/tailwind": "^5.1.2",
@@ -40,6 +16,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-tailwind": "^0.2.1",
     "eslint-plugin-tailwindcss": "^3.17.5",
+    "jiti": "^2.4.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.8",
@@ -48,7 +25,28 @@
     "typescript-eslint": "^8.13.0",
     "wrangler": "^3.84.1"
   },
-  "dependencies": {
-    "jiti": "^2.4.0"
-  }
+  "//": [
+    "Mukul's Personal Website is a Website",
+    "Copyright (C) 2024 Mukul Kedia",
+    "Mukul's Personal Website is free software: you can redistribute it and/or modify",
+    "it under the terms of the GNU Affero General Public License as published",
+    "by the Free Software Foundation, either version 3 of the License, or",
+    "(at your option) any later version.",
+    "Mukul's Personal Website is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU Affero General Public License for more details.",
+    "You should have received a copy of the GNU Affero General Public License",
+    "along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>."
+  ],
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler pages dev ./dist",
+    "astro": "astro",
+    "format": "prettier . --write",
+    "lint": "eslint --flag unstable_ts_config"
+  },
+  "type": "module"
 }
