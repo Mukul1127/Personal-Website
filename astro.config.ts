@@ -18,23 +18,11 @@
 
 import { defineConfig } from "astro/config";
 
-const SITE = "https://www.mookul.dev";
-
 // https://astro.build/config
 export default defineConfig({
-  site: SITE,
   integrations: [
     (await import("@astrojs/tailwind")).default(),
     (await import("@playform/compress")).default(),
-    (await import("@playform/inline")).default({
-      Critters: { publicPath: SITE },
-    }),
+    (await import("@playform/inline")).default({}),
   ],
-  build: {
-    assetsPrefix: SITE,
-  },
-  output: "hybrid",
-  adapter: (await import("@astrojs/cloudflare")).default({
-    imageService: "cloudflare",
-  }),
 });
