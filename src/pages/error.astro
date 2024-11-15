@@ -1,3 +1,4 @@
+---
 /*
   Mukul's Personal Website is a Website
   Copyright (C) 2024 Mukul Kedia
@@ -16,21 +17,15 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
+export const prerender = false;
 
-import tailwind from "eslint-plugin-tailwindcss";
-import eslintPluginAstro from "eslint-plugin-astro";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+const show404 = Astro.url.searchParams.get("code") === null && Astro.url.searchParams.get("name") === null && Astro.url.searchParams.get("message") === null;
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
-  ...tailwind.configs["flat/recommended"],
-  ...eslintPluginAstro.configs["flat/recommended"],
-  eslintPluginPrettierRecommended,
-  {
-    ignores: ["**/*.d.ts"],
-  },
-);
+import Layout from "@/layouts/Code.astro";
+---
+
+{
+  show404 ?
+    <Layout code="404" name={"Not Found"} message={"Sorry, we couldn't find the page you're looking for."} />
+  : <Layout code={Astro.url.searchParams.get("code") || ""} name={Astro.url.searchParams.get("name") || ""} message={Astro.url.searchParams.get("message") || ""} />
+}

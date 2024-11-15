@@ -1,4 +1,3 @@
-dist/
 .astro/
-.wrangler/
+.vercel/
 node_modules/

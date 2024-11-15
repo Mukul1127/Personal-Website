@@ -14,7 +14,6 @@
 #  You should have received a copy of the GNU Affero General Public License
 #  along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 
-dist/**
 .astro/**
-.wrangler/**
+.vercel/**
 node_modules/**

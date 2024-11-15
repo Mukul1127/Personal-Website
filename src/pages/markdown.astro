@@ -1,0 +1,184 @@
+---
+/*
+  Mukul's Personal Website is a Personal Website 
+  Copyright (C) 2024 Mukul Kedia
+
+  Mukul's Personal Website is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Mukul's Personal Website is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+export const prerender = false;
+
+import Layout from "@/layouts/Default.astro";
+import Nav from "@/components/Nav.astro";
+
+import copy from "@/assets/copy.svg?raw";
+import check from "@/assets/check.svg?raw";
+import hash from "@/assets/hash.svg?raw";
+
+import { Marked } from "marked";
+import markedAlert from "marked-alert";
+import { baseUrl } from "marked-base-url";
+import { markedEmoji } from "marked-emoji";
+
+import { Octokit } from "@octokit/rest";
+const res = await new Octokit().rest.emojis.get();
+
+import markedFootnote from "marked-footnote";
+import { gfmHeadingId } from "marked-gfm-heading-id";
+import markedShiki from "marked-shiki";
+import { codeToHtml } from "shiki";
+import { markedSmartypants } from "marked-smartypants";
+
+import { JSDOM } from "jsdom";
+import DOMPurify from "dompurify";
+
+function addCopyButtons(dom: JSDOM) {
+  dom.window.document.querySelectorAll("pre").forEach((pre) => {
+    const copyButton = dom.window.document.createElement("button");
+    copyButton.innerHTML = copy + check;
+    copyButton.classList.add("swap", "swap-rotate", "absolute", "top-4", "right-4");
+    copyButton.setAttribute(
+      "onclick",
+      `navigator.clipboard.writeText(this.parentElement.querySelector("code").textContent);this.classList.add("swap-active");setTimeout(() => this.classList.remove("swap-active"), 1500);`,
+    );
+
+    pre.querySelector("code")!.classList.add("overflow-x-auto", "mr-8", "!py-[0.8571429em]");
+
+    pre.classList.add("flex", "relative", "py-0", "bg-[#22272e]", "text-[#adbac7]");
+    pre.appendChild(copyButton);
+  });
+}
+
+function addHeadingButtons(dom: JSDOM) {
+  const addFunc = (h: Element) => {
+    const hashButton = dom.window.document.createElement("button");
+    hashButton.innerHTML = hash;
+    hashButton.classList.add("absolute", "top-[25%]", "-left-6", "opacity-0", "group-hover:opacity-100", "transition-opacity");
+    hashButton.setAttribute("onclick", `history.replaceState(null,"","#${h.id}");this.scrollIntoView({behavior:"smooth",block:"center"});`);
+
+    h.classList.add("flex", "gap-4", "relative", "group");
+    h.prepend(hashButton);
+  };
+
+  dom.window.document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
+    addFunc(heading);
+  });
+}
+
+function styleGFMAlerts(dom: JSDOM) {
+  const alertStyles = {
+    "markdown-alert-note": {
+      textClass: "text-blue-400",
+      borderClass: "border-blue-500",
+      fillClass: "fill-blue-400",
+    },
+    "markdown-alert-tip": {
+      textClass: "text-green-400",
+      borderClass: "border-green-500",
+      fillClass: "fill-green-400",
+    },
+    "markdown-alert-important": {
+      textClass: "text-purple-400",
+      borderClass: "border-purple-500",
+      fillClass: "fill-purple-400",
+    },
+    "markdown-alert-warning": {
+      textClass: "text-yellow-400",
+      borderClass: "border-yellow-500",
+      fillClass: "fill-yellow-400",
+    },
+    "markdown-alert-caution": {
+      textClass: "text-red-400",
+      borderClass: "border-red-500",
+      fillClass: "fill-red-400",
+    },
+  };
+
+  Array.from(dom.window.document.getElementsByClassName("markdown-alert")).forEach((div) => {
+    const title = div.querySelector("p")!;
+
+    title.classList.add("flex", "items-center", "gap-2", "-mb-3");
+    title.classList.remove("markdown-alert-title");
+
+    div.classList.add("border-l-4", "pl-4");
+    div.classList.remove("markdown-alert");
+
+    for (const [alertClass, styles] of Object.entries(alertStyles)) {
+      if (div.classList.contains(alertClass)) {
+        title.classList.add(styles.textClass);
+        div.classList.add(styles.borderClass, styles.fillClass);
+        div.classList.remove(alertClass);
+        break;
+      }
+    }
+  });
+}
+
+const url = "https://raw.githubusercontent.com/Mukul1127/Minecraft-Java-Flags/refs/heads/main/README.md";
+
+const response = await fetch(url);
+const data = await response.text();
+
+const purify = DOMPurify(new JSDOM("").window);
+
+const marked = new Marked(
+  {
+    gfm: true,
+  },
+  markedAlert(),
+  baseUrl(url),
+  markedEmoji({
+    emojis: res.data,
+    renderer: (token: { name: string; emoji: string }) => `<img alt="${token.name}" src="${token.emoji}"`,
+  }),
+  markedFootnote(),
+  gfmHeadingId(),
+  markedShiki({
+    highlight(code, lang) {
+      return codeToHtml(code, {
+        lang,
+        theme: "github-dark-dimmed",
+      });
+    },
+  }),
+  markedSmartypants(),
+);
+
+const html = purify.sanitize(await marked.parse(data));
+
+const dom = new JSDOM(html);
+
+addCopyButtons(dom);
+
+addHeadingButtons(dom);
+
+styleGFMAlerts(dom);
+
+const newhtml = dom.serialize();
+---
+
+<Layout title="Markdown Viewer">
+  <Nav />
+  <div class="grid size-full place-items-center">
+    <div class="prose w-[80vw] max-w-4xl text-balance font-medium" set:html={newhtml} />
+  </div>
+</Layout>
+
+<script is:inline data-astro-rerun>
+  window.onload = () => {
+    if (window.location.hash !== "") {
+      document.getElementById(window.location.hash.substring(1)).scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+</script>
