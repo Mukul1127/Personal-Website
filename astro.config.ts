@@ -40,4 +40,11 @@ export default defineConfig({
       expiration: 86400,
     },
   }),
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ["jsdom", "dompurify"],
+      },
+    },
+  },
 });
