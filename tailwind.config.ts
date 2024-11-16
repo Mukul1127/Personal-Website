@@ -16,7 +16,6 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import typography from "@tailwindcss/typography";
 import daisyui from "daisyui";
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
@@ -32,7 +31,7 @@ export default {
       },
     },
   },
-  plugins: [typography, daisyui],
+  plugins: [daisyui],
   daisyui: {
     logs: false,
     themes: [
