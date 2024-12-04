@@ -19,7 +19,7 @@
 
 import "@/styles/fonts.css";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import favicon from "@/assets/favicon.svg";
 
@@ -41,7 +41,7 @@ const { title } = Astro.props;
     <link rel="preload" href="/CascadiaCode.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
     <title>{title} - MK's Website</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="antialiased">
     <slot />
