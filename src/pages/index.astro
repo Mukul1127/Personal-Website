@@ -31,7 +31,7 @@ import envelope from "@/assets/fontawesome/envelope.svg?raw";
 
 <Layout title="Home">
   <Nav />
-  <main class="grid place-items-center gap-4 p-8 lg:grid-flow-col">
+  <main class="grid place-items-center gap-4 sm:p-8 lg:grid-flow-col">
     <div class="flex flex-col sm:flex-row sm:gap-12 lg:flex-col lg:gap-0">
       <div set:html={laptopBinary} class="flex size-60 items-center fill-black dark:fill-white" />
       <div class="mt-6 space-y-1 font-bold sm:mt-0">
@@ -58,8 +58,9 @@ import envelope from "@/assets/fontawesome/envelope.svg?raw";
     <div class="grid gap-4 sm:grid-flow-col">
       <LanguageCardList />
       <div class="flex flex-col gap-2">
-        <ProjectCard name="MeteoNow" description="A weather app made with the Open-Meteo API" year="2023" url="//meteonow.mookul.dev" />
-        <ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" year="Future" />
+        <ProjectCard name="MeteoNow (V1)" description="A weather app made with the Open-Meteo API" date="April 2023" url="//v1.meteonow.pages.dev" />
+        <ProjectCard name="MeteoNow (V2)" description="A weather app made with the Open-Meteo API" date="Feburary 2024" url="//v2.meteonow.pages.dev" />
+        <ProjectCard name="More Soon!" description="I'll be working on more soon enough :)" date="Future" />
       </div>
     </div>
   </main>

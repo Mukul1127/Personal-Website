@@ -20,20 +20,20 @@
 interface Props {
   name: string;
   description: string;
-  year: string;
+  date: string;
   url?: string;
 }
 
-const { name, description, year, url } = Astro.props;
+const { name, description, date, url } = Astro.props;
 
 import arrowUpRightFromSquare from "@/assets/fontawesome/arrow-up-right-from-square.svg?raw";
 ---
 
-<div class="card w-full max-w-96 bg-neutral text-neutral-content transition-transform hover:scale-105">
+<div class="card w-full max-w-96 bg-neutral text-neutral-content">
   <div class="card-body">
     <div class="flex items-center justify-between">
       <h2 class="card-title text-2xl font-extrabold">{name}</h2>
-      <div class="badge badge-primary font-semibold">{year}</div>
+      <div class="badge badge-primary font-semibold">{date}</div>
     </div>
     <p class="text-balance font-semibold">{description}</p>
     {
