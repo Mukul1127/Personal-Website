@@ -27,7 +27,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        mono: ["CascadiaCode", ...defaultTheme.fontFamily.mono],
       },
     },
   },
@@ -67,7 +66,6 @@ export default {
       "retro",
       {
         cyberpunk: {
-          fontFamily: "CascadiaCode, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
           primary: "oklch(74.22% 0.209 6.35)",
           secondary: "oklch(83.33% 0.184 204.72)",
           accent: "oklch(71.86% 0.2176 310.43)",
@@ -88,7 +86,26 @@ export default {
       "lofi",
       "pastel",
       "fantasy",
-      "wireframe",
+      {
+        wireframe: {
+          "color-scheme": "light",
+          primary: "#b8b8b8",
+          secondary: "#b8b8b8",
+          accent: "#b8b8b8",
+          neutral: "#ebebeb",
+          "base-100": "oklch(100% 0 0)",
+          "base-200": "#eeeeee",
+          "base-300": "#dddddd",
+          info: "#0000ff",
+          success: "#008000",
+          warning: "#a6a659",
+          error: "#ff0000",
+          "--rounded-box": "0.2rem",
+          "--rounded-btn": "0.2rem",
+          "--rounded-badge": "0.2rem",
+          "--tab-radius": "0.2rem",
+        },
+      },
       "black",
       "luxury",
       "dracula",

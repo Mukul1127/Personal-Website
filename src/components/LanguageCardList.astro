@@ -37,12 +37,12 @@ for (const svg in svgs) {
   const svgFileName = svg.split("/").slice(-1).join();
   const [, cardNameRaw, cardLabelRaw] = svgFileName.split("-");
 
-  const cardName = cardNameRaw!.replace("$Sharp$", "#").replace("$Minus$", "-");
-  const cardLabel = cardLabelRaw!.split(".").slice(0, -1).join(".");
+  const cardName = (cardNameRaw ?? "").replace("$Sharp$", "#").replace("$Minus$", "-");
+  const cardLabel = (cardLabelRaw ?? "").split(".").slice(0, -1).join(".");
 
   const cardPercentage = skillPercentages[cardLabel];
 
-  const cardSvg = decodeURI((await svgs[svg]!()) as string);
+  const cardSvg = decodeURI((await (svgs[svg] ?? (() => Promise<unknown>))()) as string);
 
   cards.push({
     name: cardName,
