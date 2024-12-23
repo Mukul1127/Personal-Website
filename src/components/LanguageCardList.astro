@@ -62,7 +62,7 @@ for (const svg in svgs) {
             <div set:html={card.svg} class="size-8" />
             <h1 class="text-3xl font-bold">{card.name}</h1>
           </div>
-          <div class="flex flex-col">
+          <div class="grid">
             <p class="font-semibold">{card.label}</p>
             <progress class="progress progress-primary h-2.5 w-20 bg-base-100" value={card.percentage} max="100" />
           </div>

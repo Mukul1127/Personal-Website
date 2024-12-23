@@ -21,7 +21,7 @@ interface Props {
   name: string;
   description: string;
   date: string;
-  url?: string;
+  url: string;
 }
 
 const { name, description, date, url } = Astro.props;
@@ -29,22 +29,12 @@ const { name, description, date, url } = Astro.props;
 import arrowUpRightFromSquare from "@/assets/fontawesome/arrow-up-right-from-square.svg?raw";
 ---
 
-<div class="card w-full max-w-96 bg-neutral text-neutral-content">
-  <div class="card-body">
-    <div class="flex items-center justify-between">
-      <h2 class="card-title text-2xl font-extrabold">{name}</h2>
-      <div class="badge badge-primary font-semibold">{date}</div>
-    </div>
-    <p class="text-balance font-semibold">{description}</p>
-    {
-      url && (
-        <div class="card-actions justify-end">
-          <a href={url} target="_blank" class="btn btn-secondary flex items-center gap-2">
-            See it
-            <div set:html={arrowUpRightFromSquare} class="size-3 fill-current" />
-          </a>
-        </div>
-      )
-    }
-  </div>
+<div class="relative max-w-96 space-y-4 rounded-box bg-neutral p-6 text-neutral-content">
+  <h1 class="text-2xl font-bold leading-6">{name}</h1>
+  <p class="text-balance font-semibold">{description}</p>
+  <a href={url} target="_blank" class="btn btn-secondary float-right size-fit">
+    See it
+    <div set:html={arrowUpRightFromSquare} class="size-3 fill-current" />
+  </a>
+  <div class="badge badge-primary absolute right-6 top-2 font-semibold">{date}</div>
 </div>
