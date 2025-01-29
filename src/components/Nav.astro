@@ -19,11 +19,15 @@
 
 import Themes from "@/components/Themes.astro";
 
+import laptopBinary from "@/assets/fontawesome/laptop-binary.svg?raw";
 import githubAlt from "@/assets/fontawesome/github-alt.svg?raw";
 ---
 
 <nav class="navbar bg-base-100/50 sticky top-0 z-50 justify-between backdrop-blur md:justify-around">
-  <a href="/" class="btn btn-ghost text-xl">Mukul's Space</a>
+  <a href="/" class="btn btn-ghost gap-3 text-xl">
+    <div set:html={laptopBinary} class="size-6 translate-y-0.5 fill-current" />
+    Mukul's Space
+  </a>
   <div class="flex gap-2">
     <a aria-label="Open Mukul's Github Page" href="//github.com/Mukul1127" target="_blank" class="btn btn-ghost flex gap-2">
       <div set:html={githubAlt} class="size-5 fill-current" />
