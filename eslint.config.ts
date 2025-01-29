@@ -16,19 +16,18 @@
   along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import js from "@eslint/js";
+import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
-
-import tailwind from "eslint-plugin-tailwindcss";
 import eslintPluginAstro from "eslint-plugin-astro";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default tseslint.config(
-  js.configs.recommended,
+  eslintConfigPrettier,
+  eslint.configs.recommended,
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
-  tailwind.configs["flat/recommended"],
-  eslintPluginAstro.configs["flat/recommended"],
+  ...eslintPluginAstro.configs.recommended,
   eslintPluginPrettierRecommended,
   {
     ignores: [".astro/", "dist/"],

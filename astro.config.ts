@@ -20,5 +20,8 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [(await import("@astrojs/tailwind")).default(), (await import("@playform/compress")).default(), (await import("@playform/inline")).default({})],
+  integrations: [(await import("@playform/compress")).default(), (await import("@playform/inline")).default({})],
+  vite: {
+    plugins: [(await import("@tailwindcss/vite")).default()],
+  },
 });

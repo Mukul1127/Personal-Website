@@ -56,7 +56,7 @@ for (const svg in svgs) {
 <div class="flex flex-col gap-2">
   {
     cards.map((card) => (
-      <div class="h-fit max-w-96 rounded-box bg-neutral text-neutral-content">
+      <div class="rounded-box bg-neutral text-neutral-content h-fit max-w-96">
         <div class="flex justify-between gap-10 px-4 py-3">
           <div class="flex items-center gap-2">
             <div set:html={card.svg} class="size-8" />
@@ -64,7 +64,7 @@ for (const svg in svgs) {
           </div>
           <div class="grid">
             <p class="font-semibold">{card.label}</p>
-            <progress class="progress progress-primary h-2.5 w-20 bg-base-100" value={card.percentage} max="100" />
+            <progress class="progress progress-primary bg-base-100 h-2.5 w-20" value={card.percentage} max="100" />
           </div>
         </div>
       </div>
