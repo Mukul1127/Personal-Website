@@ -1,7 +1,7 @@
 ---
 /*
   Mukul's Personal Website is a Website
-  Copyright (C) 2024 Mukul Kedia
+  Copyright (C) 2025 Mukul Kedia
 
   Mukul's Personal Website is free software: you can redistribute it and/or modify
   it under the terms of the GNU Affero General Public License as published
@@ -62,27 +62,29 @@ import check from "@/assets/fontawesome/check.svg?raw";
 ---
 
 <themes->
-  <button class="btn btn-ghost" popovertarget="themeChanger" style="anchor-name:--themeChanger" data-default-fallback-theme={defaultFallbackTheme}>
-    <div set:html={swatchbook} class="size-4 fill-current" />
-    Theme Changer
-  </button>
-  <ul class="dropdown dropdown-end menu rounded-box bg-base-300 border-neutral h-[30.9rem] w-64 space-y-3 border p-3 shadow-sm" popover id="themeChanger" style="position-anchor:--themeChanger">
-    {
-      themes.map((theme) => (
-        <button data-theme={theme} class="btn bg-base-100 btn-lg w-full py-3.5 text-left" type="button">
-          <input type="radio" class="theme-controller hidden" name="theme-buttons" value={theme} />
-          <div set:html={check} class="invisible size-3.5 shrink-0 fill-current" />
-          <span class="grow pl-1 text-sm font-semibold">{theme === "mukuls" ? "Mukul's" : theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
-          <span class="flex h-full shrink-0 flex-wrap gap-1">
-            <span class="rounded-selector bg-primary w-2" />
-            <span class="rounded-selector bg-secondary w-2" />
-            <span class="rounded-selector bg-accent w-2" />
-            <span class="rounded-selector bg-neutral w-2" />
-          </span>
-        </button>
-      ))
-    }
-  </ul>
+  <div class="dropdown dropdown-end">
+    <div tabindex="0" role="button" class="btn btn-ghost" data-default-fallback-theme={defaultFallbackTheme}>
+      <div set:html={swatchbook} class="size-4 fill-current" />
+      Theme Changer
+    </div>
+    <ul tabindex="0" class="dropdown-content rounded-box bg-base-300 border-neutral max-h-[30.9rem] w-64 space-y-3 overflow-y-auto border p-3 shadow-sm">
+      {
+        themes.map((theme) => (
+          <button data-theme={theme} class="btn bg-base-100 btn-lg w-full py-3.5 text-left" type="button">
+            <input type="radio" class="theme-controller hidden" name="theme-buttons" value={theme} />
+            <div set:html={check} class="invisible size-3.5 shrink-0 fill-current" />
+            <span class="grow pl-1 text-sm font-semibold">{theme === "mukuls" ? "Mukul's" : theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
+            <span class="flex h-full shrink-0 flex-wrap gap-1">
+              <span class="rounded-selector bg-primary w-2" />
+              <span class="rounded-selector bg-secondary w-2" />
+              <span class="rounded-selector bg-accent w-2" />
+              <span class="rounded-selector bg-neutral w-2" />
+            </span>
+          </button>
+        ))
+      }
+    </ul>
+  </div>
 </themes->
 
 <script>
