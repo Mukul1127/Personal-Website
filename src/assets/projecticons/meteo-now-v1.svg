@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <rect width="1000" height="1000" fill="#4f5d73" rx="200" ry="200"/>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" transform="matrix(13 0 0 13 100 100)" viewBox="0 0 64 64">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 64 64">
+      <style>
+        .st1{opacity:.2}.st2{fill:#231f20}
+      </style>
+      <g id="Layer_1">
+        <circle cx="32" cy="32" r="32" fill="#4f5d73"/>
+        <g class="st1">
+          <circle cx="22" cy="24" r="10" class="st2"/>
+        </g>
+        <circle cx="22" cy="22" r="10" fill="#e0995e"/>
+        <g class="st1">
+          <path d="M49 36c0-8-7-14-15-14-7 0-13 5-14 11-5 0-8 4-8 8 0 5 4 9 9 9h28c4 0 7-3 7-7s-3-7-7-7z" class="st2"/>
+        </g>
+        <g class="st1">
+          <path d="M32 22v-3c-7 1-12 5-13 11h-3l6 2c6 0 10-4 10-10z" class="st2"/>
+        </g>
+        <path fill="#fff" d="M49 34c0-8-7-14-15-14-7 0-13 5-14 11-5 0-8 4-8 8 0 5 4 9 9 9h28c4 0 7-3 7-7s-3-7-7-7z"/>
+      </g>
+    </svg>
+  </svg>
+</svg>

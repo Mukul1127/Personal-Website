@@ -18,23 +18,21 @@
 */
 
 interface Props {
-  name: string;
-  description: string;
-  date: string;
-  url: string;
+  label: string;
+  src: string;
+  fromLevel: string;
+  toLevel: string;
 }
 
-const { name, description, date, url } = Astro.props;
+const { label, src, fromLevel, toLevel } = Astro.props;
 
-import arrowUpRightFromSquare from "@/assets/fontawesome/arrow-up-right-from-square.svg?raw";
+const images = import.meta.glob("/src/assets/**/*.svg", { query: "?raw", import: "default" });
 ---
 
-<div class="rounded-box bg-neutral text-neutral-content relative max-w-96 p-6">
-  <h1 class="pb-4 text-2xl leading-6 font-bold">{name}</h1>
-  <p class="pb-4 font-semibold text-balance">{description}</p>
-  <a href={url} target="_blank" class="btn btn-secondary float-right">
-    See it
-    <div set:html={arrowUpRightFromSquare} class="size-3 fill-current" />
-  </a>
-  <div class="badge badge-primary absolute top-6 right-6 font-semibold">{date}</div>
-</div>
+<li class="list-row">
+  <div set:html={(images[src] ?? (() => Promise<unknown>))()} class="size-10" />
+  <div>
+    <div class="font-bold">{label}</div>
+    <div class="text-xs font-medium opacity-60">{`${fromLevel} -> ${toLevel}`}</div>
+  </div>
+</li>

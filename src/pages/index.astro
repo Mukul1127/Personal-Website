@@ -20,25 +20,27 @@
 import Nav from "@/components/Nav.astro";
 import Layout from "@/layouts/Layout.astro";
 
-import LanguageCardList from "@/components/LanguageCardList.astro";
-import ProjectCard from "@/components/ProjectCard.astro";
-
 import laptopBinary from "@/assets/fontawesome/laptop-binary.svg?raw";
 import locationCrosshairs from "@/assets/fontawesome/location-crosshairs.svg?raw";
 import clock from "@/assets/fontawesome/clock.svg?raw";
 import envelope from "@/assets/fontawesome/envelope.svg?raw";
+
+import YearCard from "@/components/ToolCards/YearCard.astro";
+import Achievement from "@/components/ToolCards/Achievement.astro";
+import Improvement from "@/components/ToolCards/Improvement.astro";
+import Project from "@/components/ToolCards/Project.astro";
 ---
 
 <Layout title="Home">
   <Nav />
-  <main class="grid place-items-center gap-4 sm:p-8 lg:grid-flow-col">
-    <div class="flex flex-col sm:flex-row sm:gap-12 lg:flex-col lg:gap-0">
+  <main class="grid place-items-center gap-4 sm:p-8">
+    <div class="grid pb-8 sm:grid-flow-col sm:gap-16 sm:pb-0">
       <div set:html={laptopBinary} class="flex size-60 items-center fill-black dark:fill-white" />
-      <div class="mt-6 space-y-1 font-bold sm:mt-0">
+      <div class="font-bold sm:pt-8">
         <h1 class="flex text-4xl text-black dark:text-white">
           Hi, I'm&nbsp;<span class="text-accent">Mukul</span>
         </h1>
-        <h2 class="md:text-xl">A Self-Taught Developer</h2>
+        <h2 class="sm:text-xl">A Self-Taught Developer</h2>
         <br />
         <div class="flex items-center gap-2">
           <div set:html={locationCrosshairs} class="size-4 fill-current" />
@@ -46,7 +48,7 @@ import envelope from "@/assets/fontawesome/envelope.svg?raw";
         </div>
         <div class="flex items-center gap-2">
           <div set:html={clock} class="size-4 fill-current" />
-          UTC - 4:00
+          UTC - 5:00
         </div>
         <div class="flex items-center gap-2">
           <div set:html={envelope} class="size-4 fill-current" />
@@ -55,13 +57,120 @@ import envelope from "@/assets/fontawesome/envelope.svg?raw";
       </div>
     </div>
 
-    <div class="grid gap-4 sm:grid-flow-col">
-      <LanguageCardList />
-      <div class="flex flex-col gap-2">
-        <ProjectCard name="MeteoNow (V1)" description="A weather app made with the Open-Meteo API" date="April 2023" url="//v1.meteonow.pages.dev" />
-        <ProjectCard name="MeteoNow (V2)" description="A weather app made with the Open-Meteo API" date="Feburary 2024" url="//v2.meteonow.pages.dev" />
-        <ProjectCard name="MeteoNow (V3)" description="A weather app made with the Open-Meteo API" date="December 2024" url="//meteonow.mookul.dev" />
-      </div>
+    <div class="grid w-full grid-cols-[repeat(auto-fill,minmax(22rem,1fr))] gap-4">
+      <YearCard label="2020">
+        <Fragment slot="achievements">
+          <Achievement label="CSS" src="/src/assets/skillicons/css.svg" tags={["Styling", "Layout"]} />
+          <Achievement label="Bootstrap" src="/src/assets/skillicons/bootstrap.svg" tags={["Responsive", "Components"]} />
+          <Achievement label="GitHub" src="/src/assets/skillicons/github-dark.svg" tags={["Versioning", "Collaboration"]} />
+          <Achievement label="Github / Pages" src="/src/assets/skillicons/githubpages-dark.svg" tags={["Hosting", "Static"]} />
+          <Achievement label="HTML" src="/src/assets/skillicons/html.svg" tags={["Semantics", "Content"]} />
+          <Achievement label="JavaScript" src="/src/assets/skillicons/javascript.svg" tags={["Dynamic", "Versatile"]} />
+        </Fragment>
+      </YearCard>
+
+      <YearCard label="2021">
+        <Fragment slot="achievements">
+          <Achievement label="Cloudflare" src="/src/assets/skillicons/cloudflare-dark.svg" tags={["CDN", "DNS"]} />
+          <Achievement label="NodeJS" src="/src/assets/skillicons/nodejs-dark.svg" tags={["Runtime", "V8"]} />
+          <Achievement label="NPM" src="/src/assets/skillicons/npm-dark.svg" tags={["JavaScript", "Package Organizer"]} />
+          <Achievement label="Python" src="/src/assets/skillicons/python-dark.svg" tags={["Readable", "Versatile"]} />
+          <Achievement label="Vite" src="/src/assets/skillicons/vite-dark.svg" tags={["Bundler", "Innovative"]} />
+        </Fragment>
+        <Fragment slot="improvements">
+          <Improvement label="CSS" src="/src/assets/skillicons/css.svg" fromLevel="Intermediate" toLevel="Advanced" />
+          <Improvement label="GitHub" src="/src/assets/skillicons/github-dark.svg" fromLevel="Beginner" toLevel="Intermediate" />
+          <Improvement label="HTML" src="/src/assets/skillicons/html.svg" fromLevel="Intermediate" toLevel="Advanced" />
+          <Improvement label="JavaScript" src="/src/assets/skillicons/javascript.svg" fromLevel="Intermediate" toLevel="Advanced" />
+        </Fragment>
+      </YearCard>
+
+      <YearCard label="2023">
+        <Fragment slot="achievements">
+          <Achievement label="Astro" src="/src/assets/skillicons/astro.svg" tags={["Islands", "Speed"]} />
+          <Achievement label="Go" src="/src/assets/skillicons/golang.svg" tags={["Concurrent", "Efficient"]} />
+          <Achievement label="TailwindCSS" src="/src/assets/skillicons/tailwindcss-dark.svg" tags={["Utility-first", "Responsive"]} />
+          <Achievement label="Typescript" src="/src/assets/skillicons/typescript.svg" tags={["Static", "Flexible"]} />
+        </Fragment>
+        <Fragment slot="improvements">
+          <Improvement label="CSS" src="/src/assets/skillicons/css.svg" fromLevel="Advanced" toLevel="Expert" />
+          <Improvement label="HTML" src="/src/assets/skillicons/html.svg" fromLevel="Advanced" toLevel="Expert" />
+          <Improvement label="JavaScript" src="/src/assets/skillicons/javascript.svg" fromLevel="Advanced" toLevel="Expert" />
+          <Improvement label="Python" src="/src/assets/skillicons/python-dark.svg" fromLevel="Beginner" toLevel="Intermediate" />
+        </Fragment>
+        <Fragment slot="projects">
+          <Project
+            label="MeteoNow (V1)"
+            src="/src/assets/projecticons/meteo-now-v1.svg"
+            description="A weather app made\n with the Open-Meteo API"
+            liveUrl="//v1.meteonow.pages.dev"
+            sourceUrl="//github.com/Mukul1127/MeteoNow/tree/v1"
+          />
+        </Fragment>
+      </YearCard>
+
+      <YearCard label="2024">
+        <Fragment slot="achievements">
+          <Achievement label="C#" src="/src/assets/skillicons/cs.svg" tags={["Versatile", "Object-Oriented"]} />
+          <Achievement label="DaisyUI" src="/src/assets/skillicons/daisyui-dark.svg" tags={["TailwindCSS", "Components"]} />
+          <Achievement label="Github / Actions" src="/src/assets/skillicons/githubactions-dark.svg" tags={["CI/CD", "Automation"]} />
+          <Achievement label="Java" src="/src/assets/skillicons/java-dark.svg" tags={["Debugging", "Portable"]} />
+          <Achievement label="PNPM" src="/src/assets/skillicons/pnpm-dark.svg" tags={["Package Manager", "Quick"]} />
+          <Achievement label="Zig" src="/src/assets/skillicons/zig-dark.svg" tags={["Modern", "Secure"]} />
+        </Fragment>
+        <Fragment slot="improvements">
+          <Improvement label="Astro" src="/src/assets/skillicons/astro.svg" fromLevel="Beginner" toLevel="Intermediate" />
+          <Improvement label="GitHub" src="/src/assets/skillicons/github-dark.svg" fromLevel="Intermediate" toLevel="Advanced" />
+          <Improvement label="TailwindCSS" src="/src/assets/skillicons/tailwindcss-dark.svg" fromLevel="Intermediate" toLevel="Expert" />
+        </Fragment>
+        <Fragment slot="projects">
+          <Project
+            label="MeteoNow (V2)"
+            src="/src/assets/projecticons/meteo-now-v2.svg"
+            description="A weather app made\n with the Open-Meteo API"
+            liveUrl="//v2.meteonow.pages.dev"
+            sourceUrl="//github.com/Mukul1127/MeteoNow/tree/v2"
+          />
+        </Fragment>
+      </YearCard>
+
+      <YearCard label="2025">
+        <Fragment slot="achievements">
+          <Achievement label="C" src="/src/assets/skillicons/c.svg" tags={["Unsafe", "Low-level"]} />
+          <Achievement label="C++" src="/src/assets/skillicons/cpp.svg" tags={["Compiled", "Performance"]} />
+          <Achievement label="Bun" src="/src/assets/skillicons/bun-dark.svg" tags={["Compatible", "Bundler"]} />
+          <Achievement label="CMake" src="/src/assets/skillicons/cmake-dark.svg" tags={["Build", "Configuration"]} />
+        </Fragment>
+        <Fragment slot="improvements">
+          <Improvement label="Astro" src="/src/assets/skillicons/astro.svg" fromLevel="Intermediate" toLevel="Advanced" />
+          <Improvement label="Python" src="/src/assets/skillicons/python-dark.svg" fromLevel="Intermediate" toLevel="Advanced" />
+          <Improvement label="Zig" src="/src/assets/skillicons/zig-dark.svg" fromLevel="Beginner" toLevel="Advanced" />
+        </Fragment>
+        <Fragment slot="projects">
+          <Project
+            label="MeteoNow (V3)"
+            src="/src/assets/projecticons/meteo-now-v3.svg"
+            description="A weather app made\n with the Open-Meteo API"
+            liveUrl="//meteonow.mookul.dev"
+            sourceUrl="//github.com/Mukul1127/MeteoNow/tree/v3"
+          />
+        </Fragment>
+      </YearCard>
+
+      <YearCard label="Future">
+        <Fragment slot="achievements">
+          <Achievement label="Assembly" src="/src/assets/skillicons/assembly.svg" tags={["Low-level", "Performance"]} />
+          <Achievement label="Godot" src="/src/assets/skillicons/godot-dark.svg" tags={["Engine", "Versatile"]} />
+          <Achievement label="Odin" src="/src/assets/skillicons/odin-dark.svg" tags={["Performant", "Versatile"]} />
+          <Achievement label="React" src="/src/assets/skillicons/react-dark.svg" tags={["UI", "VDOM"]} />
+          <Achievement label="Rust" src="/src/assets/skillicons/rust-dark.svg" tags={["Safe", "Fast"]} />
+          <Achievement label="Unity" src="/src/assets/skillicons/unity-dark.svg" tags={["Engine", "Popular"]} />
+          <Achievement label="WebAssembly" src="/src/assets/skillicons/webassembly.svg" tags={["Fast", "Browser"]} />
+        </Fragment>
+        <Fragment slot="improvements">
+          <Improvement label="Go" src="/src/assets/skillicons/golang.svg" fromLevel="Beginner" toLevel="Advanced" />
+        </Fragment>
+      </YearCard>
     </div>
   </main>
 </Layout>

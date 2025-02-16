@@ -1,0 +1,49 @@
+---
+/*
+  Mukul's Personal Website is a Website
+  Copyright (C) 2025 Mukul Kedia
+
+  Mukul's Personal Website is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Mukul's Personal Website is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with Mukul's Personal Website. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+interface Props {
+  label: string;
+  src: string;
+  description: string;
+  sourceUrl: string;
+  liveUrl: string;
+}
+
+const { label, src, description, sourceUrl, liveUrl } = Astro.props;
+
+import githubAlt from "@/assets/fontawesome/github-alt.svg?raw";
+import arrowUpRightFromSquare from "@/assets/fontawesome/arrow-up-right-from-square.svg?raw";
+const images = import.meta.glob("/src/assets/**/*.svg", { query: "?raw", import: "default" });
+---
+
+<li class="list-row">
+  <div set:html={(images[src] ?? (() => Promise<unknown>))()} class="size-10" />
+  <div class="text-left">
+    <div class="-translate-y-1 font-bold">{label}</div>
+    <div class="-translate-y-0.5 text-xs font-medium whitespace-pre-line opacity-60">{description}</div>
+  </div>
+  <div class="list-col-wrap col-span-2 col-start-1 flex gap-4">
+    <a target="_blank" href={sourceUrl} class="btn btn-secondary gap-4">
+      <div set:html={githubAlt} class="size-5 fill-current" /> Source
+    </a>
+    <a target="_blank" href={liveUrl} class="btn btn-secondary gap-4">
+      <div set:html={arrowUpRightFromSquare} class="size-4 fill-current" /> Live
+    </a>
+  </div>
+</li>
