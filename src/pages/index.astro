@@ -57,7 +57,8 @@ import Project from "@/components/ToolCards/Project.astro";
       </div>
     </div>
 
-    <div class="grid w-full grid-cols-[repeat(auto-fill,minmax(22rem,1fr))] gap-4">
+    {/* https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/ */}
+    <div class="grid w-full grid-cols-[repeat(auto-fill,minmax(max(22rem,calc((100%-22rem)/6)),1fr))] gap-4">
       <YearCard label="2020">
         <Fragment slot="achievements">
           <Achievement label="CSS" src="/src/assets/skillicons/css.svg" tags={["Styling", "Layout"]} />
@@ -125,6 +126,13 @@ import Project from "@/components/ToolCards/Project.astro";
         </Fragment>
         <Fragment slot="projects">
           <Project
+            label="Personal Website (V1)"
+            src="/src/assets/favicon.svg"
+            description="My Personal Website written in Astro."
+            liveUrl="//v1.personal-website-4e6.pages.dev"
+            sourceUrl="//github.com/Mukul1127/Personal-Website/tree/v1"
+          />
+          <Project
             label="MeteoNow (V2)"
             src="/src/assets/projecticons/meteo-now-v2.svg"
             description="A weather app made\n with the Open-Meteo API"
@@ -147,6 +155,13 @@ import Project from "@/components/ToolCards/Project.astro";
           <Improvement label="Zig" src="/src/assets/skillicons/zig-dark.svg" fromLevel="Beginner" toLevel="Advanced" />
         </Fragment>
         <Fragment slot="projects">
+          <Project
+            label="Personal Website (V2)"
+            src="/src/assets/favicon.svg"
+            description="My Personal Website written in Astro."
+            liveUrl=""
+            sourceUrl="//github.com/Mukul1127/Personal-Website/tree/v2"
+          />
           <Project
             label="MeteoNow (V3)"
             src="/src/assets/projecticons/meteo-now-v3.svg"
